@@ -1,18 +1,27 @@
-const express = require('express'); // Import Express
-const path = require('path'); // Helps with file paths
+// Import necessary modules
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();  // To use the .env file
+const authRoutes = require('./routes/auth');  // Import auth routes
 
-const app = express();
-const PORT = process.env.PORT || 3000; // Use Render's port or 3000 locally
+// Initialize Express application
+const app = express(); app.use(express.static('public'));
 
-// Serve static files (HTML, CSS, JS) from "public" folder
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Route to serve the main page
+// Middleware
+app.use(cors());  // Enable cross-origin requests
+app.use(express.json());  // Parse incoming JSON data
+
+// Use the auth routes for any requests starting with /auth
+app.use('/auth', authRoutes);
+
+// Basic route to test if the server is working
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.send('Server is running!');
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+// Set server to listen on a port (5000)
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

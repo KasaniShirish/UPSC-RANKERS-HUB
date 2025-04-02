@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC Rankers hub Mock Test 21</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+.container {
+max-width: 800px;
+margin: 50px auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+text-align: center;
+}
+.question-container {
+display: none;
+}
+.question-container.active {
+display: block;
+}
+.question {
+margin-bottom: 20px;
+}
+#navigation-buttons {
+text-align: center;
+margin-top: 20px;
+}
+#timer {
+text-align: center;
+margin-top: 10px;
+color: red;
+}
+button {
+padding: 10px 20px;
+margin: 5px;
+background-color: #007BFF;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+button:disabled {
+background-color: #ccc;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>UPSC Rankers Hub Mock Test 21</h1>
+<p id="timer">Time Left: 120:00</p>
+<form id="testForm" onsubmit="handleSubmit(event)">
+    <div class="question-container active" id="question-container-1">
+        <!-- Questions 1 to 10 -->
+        <div class="question">
+        <p>1. Which of the following states recently launched the "Carbon Neutral Villages" initiative?</p>
+        <input type="radio" name="q1" value="Himachal Pradesh"> a) Himachal Pradesh<br>
+        <input type="radio" name="q1" value="Sikkim"> b) Sikkim<br>
+        <input type="radio" name="q1" value="Kerala"> c) Kerala<br>
+        <input type="radio" name="q1" value="Arunachal Pradesh"> d) Arunachal Pradesh<br>
+        </div>
+
+        <div class="question">
+            <p>2. The "Deep Ocean Mission" of India aims to explore which of the following?</p>
+            <input type="radio" name="q2" value="Hydrothermal vents and polymetallic nodules"> a) Hydrothermal vents and polymetallic nodules<br>
+            <input type="radio" name="q2" value="Coral reef biodiversity"> b) Coral reef biodiversity<br>
+            <input type="radio" name="q2" value="Marine tourism opportunities"> c) Marine tourism opportunities<br>
+            <input type="radio" name="q2" value="Offshore wind energy potential"> d) Offshore wind energy potential<br>
+            </div>
+
+                <div class="question">
+                <p>3. India recently became the first country to sign a "Quantum Cooperation Agreement" with which nation?</p>
+                <input type="radio" name="q3" value="USA"> a) USA<br>
+                <input type="radio" name="q3" value="Germany"> b) Germany<br>
+                <input type="radio" name="q3" value="Japan"> c) Japan<br>
+                <input type="radio" name="q3" value="France"> d) France<br>
+                </div>
+
+                <div class="question">
+                <p>4. The "National AI Governance Framework," recently released, aims to regulate:</p>
+                <input type="radio" name="q4" value="Ethical deployment of AI in governance"> a) Ethical deployment of AI in governance<br>
+                <input type="radio" name="q4" value="AI in agricultural yield prediction"> b) AI in agricultural yield prediction<br>
+                <input type="radio" name="q4" value="The use of AI in private businesses"> c) The use of AI in private businesses<br>
+                <input type="radio" name="q4" value="AI-based surveillance systems"> d) AI-based surveillance systems<br>
+                </div>
+
+                <div class="question">
+                <p>5. The "National Cyber Resilience Initiative" was launched to:</p>
+                <input type="radio" name="q5" value="Enhance India's cybersecurity infrastructure"> a) Enhance India's cybersecurity infrastructure<br>
+                <input type="radio" name="q5" value="Develop indigenous encryption algorithms"> b) Develop indigenous encryption algorithms<br>
+                <input type="radio" name="q5" value="Regulate private data-sharing policies"> c) Regulate private data-sharing policies<br>
+                <input type="radio" name="q5" value="Promote cyber insurance policies"> d) Promote cyber insurance policies<br>
+                </div>
+
+                <div class="question">
+                <p>6. Which international organization recently proposed the "Global Ocean Treaty" to protect marine biodiversity?</p>
+                <input type="radio" name="q6" value="UN General Assembly"> a) UN General Assembly<br>
+                <input type="radio" name="q6" value="International Maritime Organization"> b) International Maritime Organization<br>
+                <input type="radio" name="q6" value="UNEP"> c) UNEP<br>
+                <input type="radio" name="q6" value="World Bank"> d) World Bank<br>
+                </div>
+
+                <div class="question">
+                <p>7. India's "Sustainable Aviation Fuel Policy 2024" mandates what percentage of biofuel usage in aviation by 2030?</p>
+                <input type="radio" name="q7" value="5%"> a) 5%<br>
+                <input type="radio" name="q7" value="10%"> b) 10%<br>
+                <input type="radio" name="q7" value="15%"> c) 15%<br>
+                <input type="radio" name="q7" value="20%"> d) 20%<br>
+                </div>
+
+                <div class="question">
+                <p>8. The "National Genome Mapping Program" aims to:</p>
+                <input type="radio" name="q8" value="Identify genetic markers for hereditary diseases"> a) Identify genetic markers for hereditary diseases<br>
+                <input type="radio" name="q8" value="Create a genetic database of wildlife species"> b) Create a genetic database of wildlife species<br>
+                <input type="radio" name="q8" value="Establish India's own DNA sequencing lab"> c) Establish India's own DNA sequencing lab<br>
+                <input type="radio" name="q8" value="Develop genetically modified crops"> d) Develop genetically modified crops<br>
+                </div>
+
+                <div class="question">
+                <p>9. Which river conservation project received funding under the "Blue Water Fund" launched by the Indian government?</p>
+                <input type="radio" name="q9" value="Ganga"> a) Ganga<br>
+                <input type="radio" name="q9" value="Yamuna"> b) Yamuna<br>
+                <input type="radio" name="q9" value="Narmada"> c) Narmada<br>
+                <input type="radio" name="q9" value="Brahmaputra"> d) Brahmaputra<br>
+                </div>
+
+                <div class="question">
+                <p>10. "Operation Trinetra," recently launched by Indian security forces, targets:</p>
+                <input type="radio" name="q10" value="Counter-terrorism in Jammu & Kashmir"> a) Counter-terrorism in Jammu & Kashmir<br>
+                <input type="radio" name="q10" value="Illegal arms trade in Northeast India"> b) Illegal arms trade in Northeast India<br>
+                <input type="radio" name="q10" value="Human trafficking networks"> c) Human trafficking networks<br>
+                <input type="radio" name="q10" value="Cyber espionage threats"> d) Cyber espionage threats<br>
+             </div>
+     </div>
+     <div class="question-container" id="question-container-2">
+        <!-- Questions 11 to 20 -->
+        <div class="question">
+            <p>11. The "National Blockchain Initiative" was launched to:</p>
+            <input type="radio" name="q11" value="Implement blockchain in land records and governance"> a) Implement blockchain in land records and governance<br>
+            <input type="radio" name="q11" value="Enable cryptocurrency trading regulation"> b) Enable cryptocurrency trading regulation<br>
+            <input type="radio" name="q11" value="Develop India's first central bank digital currency"> c) Develop India's first central bank digital currency<br>
+            <input type="radio" name="q11" value="Strengthen supply chain transparency in agriculture"> d) Strengthen supply chain transparency in agriculture<br>
+            </div>
+
+            <div class="question">
+                <p>12. The "Great Indian Bustard Protection Initiative" was launched in which state?</p>
+                <input type="radio" name="q12" value="Gujarat"> a) Gujarat<br>
+                <input type="radio" name="q12" value="Rajasthan"> b) Rajasthan<br>
+                <input type="radio" name="q12" value="Maharashtra"> c) Maharashtra<br>
+                <input type="radio" name="q12" value="Madhya Pradesh"> d) Madhya Pradesh<br>
+                </div>
+
+                <div class="question">
+                    <p>13. "Project Dolphin," launched recently, aims to protect:</p>
+                    <input type="radio" name="q13" value="Riverine dolphins in the Ganges and Brahmaputra"> a) Riverine dolphins in the Ganges and Brahmaputra<br>
+                    <input type="radio" name="q13" value="Marine dolphins in the Indian Ocean"> b) Marine dolphins in the Indian Ocean<br>
+                    <input type="radio" name="q13" value="Dolphin tourism in Sundarbans"> c) Dolphin tourism in Sundarbans<br>
+                    <input type="radio" name="q13" value="Irrawaddy dolphins in Chilika Lake"> d) Irrawaddy dolphins in Chilika Lake<br>
+                    </div>
+
+                    <div class="question">
+                    <p>14. India's "Moon Mining Initiative" is associated with:</p>
+                    <input type="radio" name="q14" value="ISRO’s Chandrayaan-4 mission"> a) ISRO’s Chandrayaan-4 mission<br>
+                    <input type="radio" name="q14" value="Extraction of Helium-3 for future energy use"> b) Extraction of Helium-3 for future energy use<br>
+                    <input type="radio" name="q14" value="Private participation in lunar exploration"> c) Private participation in lunar exploration<br>
+                    <input type="radio" name="q14" value="Developing Moon-based robotic mining technology"> d) Developing Moon-based robotic mining technology<br>
+                    </div>
+
+                    <div class="question">
+                        <p>15. The "One Health Initiative" launched in India focuses on:</p>
+                        <input type="radio" name="q15" value="Zoonotic diseases and integrated human-animal health"> a) Zoonotic diseases and integrated human-animal health<br>
+                        <input type="radio" name="q15" value="Universal vaccination against tropical diseases"> b) Universal vaccination against tropical diseases<br>
+                        <input type="radio" name="q15" value="AI-based medical diagnosis in rural India"> c) AI-based medical diagnosis in rural India<br>
+                        <input type="radio" name="q15" value="Promotion of organic farming for better health outcomes"> d) Promotion of organic farming for better health outcomes<br>
+                        </div>
+
+                        <div class="question">
+                        <p>16. India's first "Biodegradable Plastic Manufacturing Hub" was established in:</p>
+                        <input type="radio" name="q16" value="Tamil Nadu"> a) Tamil Nadu<br>
+                        <input type="radio" name="q16" value="Gujarat"> b) Gujarat<br>
+                        <input type="radio" name="q16" value="Karnataka"> c) Karnataka<br>
+                        <input type="radio" name="q16" value="Odisha"> d) Odisha<br>
+                        </div>
+
+                        <div class="question">
+                        <p>17. Which city hosted the 2024 "Global Climate Action Summit"?</p>
+                        <input type="radio" name="q17" value="New Delhi"> a) New Delhi<br>
+                        <input type="radio" name="q17" value="Geneva"> b) Geneva<br>
+                        <input type="radio" name="q17" value="Paris"> c) Paris<br>
+                        <input type="radio" name="q17" value="Tokyo"> d) Tokyo<br>
+                        </div>
+
+                        <div class="question">
+                        <p>18. The "India-UAE Digital Trade Agreement" facilitates:</p>
+                        <input type="radio" name="q18" value="Blockchain-based trade documentation"> a) Blockchain-based trade documentation<br>
+                        <input type="radio" name="q18" value="AI-driven logistics tracking"> b) AI-driven logistics tracking<br>
+                        <input type="radio" name="q18" value="Cross-border e-commerce taxation"> c) Cross-border e-commerce taxation<br>
+                        <input type="radio" name="q18" value="Cybersecurity collaboration"> d) Cybersecurity collaboration<br>
+                        </div>
+
+                        <div class="question">
+                        <p>19. The "National Robotics Mission" aims to:</p>
+                        <input type="radio" name="q19" value="Develop indigenous humanoid robots for industrial use"> a) Develop indigenous humanoid robots for industrial use<br>
+                        <input type="radio" name="q19" value="Establish India's first AI-powered military robots"> b) Establish India's first AI-powered military robots<br>
+                        <input type="radio" name="q19" value="Promote robotic automation in MSME industries"> c) Promote robotic automation in MSME industries<br>
+                        <input type="radio" name="q19" value="Enhance the use of robotics in medical surgeries"> d) Enhance the use of robotics in medical surgeries<br>
+                        </div>
+
+                        <div class="question">
+                        <p>20. The "Deep Space Radar" installed in India is meant to:</p>
+                        <input type="radio" name="q20" value="Track near-Earth objects and potential asteroid threats"> a) Track near-Earth objects and potential asteroid threats<br>
+                        <input type="radio" name="q20" value="Monitor space debris in Earth's orbit"> b) Monitor space debris in Earth's orbit<br>
+                        <input type="radio" name="q20" value="Strengthen ISRO's interplanetary communication"> c) Strengthen ISRO’s interplanetary communication<br>
+                        <input type="radio" name="q20" value="Assist in space-based military operations"> d) Assist in space-based military operations<br>
+                        </div>
+    </div>
+     <div class="question-container" id="question-container-3">
+         <!-- Questions 21 to 30 -->
+                         <div class="question">
+                            <p>21. The “Digital Banking Readiness Index” recently launched by RBI measures:</p>
+                            <input type="radio" name="q21" value="The adoption of fintech solutions across states"> a) The adoption of fintech solutions across states<br>
+                            <input type="radio" name="q21" value="The percentage of cashless transactions in rural areas"> b) The percentage of cashless transactions in rural areas<br>
+                            <input type="radio" name="q21" value="The cybersecurity preparedness of Indian banks"> c) The cybersecurity preparedness of Indian banks<br>
+                            <input type="radio" name="q21" value="The overall efficiency of online lending platforms"> d) The overall efficiency of online lending platforms<br>
+                            </div>
+
+                         <div class="question">
+                                <p>22. The “India-Pacific Security Framework” recently signed by India focuses on:</p>
+                                <input type="radio" name="q22" value="Maritime security cooperation with Indo-Pacific nations"> a) Maritime security cooperation with Indo-Pacific nations<br>
+                                <input type="radio" name="q22" value="Joint cyber defense initiatives with QUAD members"> b) Joint cyber defense initiatives with QUAD members<br>
+                                <input type="radio" name="q22" value="Counterterrorism measures in the South China Sea"> c) Counterterrorism measures in the South China Sea<br>
+                                <input type="radio" name="q22" value="Intelligence sharing with ASEAN nations"> d) Intelligence sharing with ASEAN nations<br>
+                                </div>
+
+                         <div class="question">
+                                <p>23. The “Green Energy Corridor Phase-II” launched in 2024 primarily aims to:</p>
+                                <input type="radio" name="q23" value="Enhance interstate renewable energy transmission infrastructure"> a) Enhance interstate renewable energy transmission infrastructure<br>
+                                <input type="radio" name="q23" value="Promote offshore wind energy projects"> b) Promote offshore wind energy projects<br>
+                                <input type="radio" name="q23" value="Develop hybrid solar-wind power plants"> c) Develop hybrid solar-wind power plants<br>
+                                <input type="radio" name="q23" value="Strengthen the domestic production of solar panels"> d) Strengthen the domestic production of solar panels<br>
+                                </div>
+
+                        <div class="question">
+                                <p>24. Which new category was added under the Scheduled Tribes list through the 2024 amendment?</p>
+                                <input type="radio" name="q24" value="Pahari Ethnic Group of Jammu & Kashmir"> a) Pahari Ethnic Group of Jammu & Kashmir<br>
+                                <input type="radio" name="q24" value="Gond Tribe of Madhya Pradesh"> b) Gond Tribe of Madhya Pradesh<br>
+                                <input type="radio" name="q24" value="Toda Tribe of Tamil Nadu"> c) Toda Tribe of Tamil Nadu<br>
+                                <input type="radio" name="q24" value="Irula Tribe of Kerala"> d) Irula Tribe of Kerala<br>
+                                </div>
+
+                         <div class="question">
+                                <p>25. The "National Biosecurity Strategy 2024" aims to:</p>
+                                <input type="radio" name="q25" value="Regulate the research and development of synthetic biology"> a) Regulate the research and development of synthetic biology<br>
+                                <input type="radio" name="q25" value="Prevent bioterrorism and lab-based pathogen risks"> b) Prevent bioterrorism and lab-based pathogen risks<br>
+                                <input type="radio" name="q25" value="Strengthen quarantine measures for imported agricultural goods"> c) Strengthen quarantine measures for imported agricultural goods<br>
+                                <input type="radio" name="q25" value="Ensure safe disposal of biomedical waste"> d) Ensure safe disposal of biomedical waste<br>
+                                </div>
+
+                        <div class="question">
+                                <p>26. India's “National Drone Surveillance Grid” will be implemented primarily to:</p>
+                                <input type="radio" name="q26" value="Detect and neutralize unauthorized UAVs"> a) Detect and neutralize unauthorized UAVs<br>
+                                <input type="radio" name="q26" value="Enhance agricultural monitoring in remote areas"> b) Enhance agricultural monitoring in remote areas<br>
+                                <input type="radio" name="q26" value="Aid traffic surveillance and management"> c) Aid traffic surveillance and management<br>
+                                <input type="radio" name="q26" value="Facilitate AI-powered border patrolling"> d) Facilitate AI-powered border patrolling<br>
+                                </div>
+
+                         <div class="question">
+                                <p>27. The "India-Saudi Green Partnership" focuses on:</p>
+                                <input type="radio" name="q27" value="Joint research in hydrogen energy and carbon capture"> a) Joint research in hydrogen energy and carbon capture<br>
+                                <input type="radio" name="q27" value="Oil and gas trade optimization"> b) Oil and gas trade optimization<br>
+                                <input type="radio" name="q27" value="Desert afforestation projects"> c) Desert afforestation projects<br>
+                                <input type="radio" name="q27" value="Development of AI-driven smart cities"> d) Development of AI-driven smart cities<br>
+                                </div>
+
+                         <div class="question">
+                                <p>28. The “Global AI Ethics Framework” proposed at the G20 Summit focuses on:</p>
+                                <input type="radio" name="q28" value="Preventing algorithmic bias in AI decision-making"> a) Preventing algorithmic bias in AI decision-making<br>
+                                <input type="radio" name="q28" value="Regulating AI in private-sector industries"> b) Regulating AI in private-sector industries<br>
+                                <input type="radio" name="q28" value="Banning autonomous weapons systems"> c) Banning autonomous weapons systems<br>
+                                <input type="radio" name="q28" value="Promoting open-source AI development"> d) Promoting open-source AI development<br>
+                                </div>
+
+                         <div class="question">
+                                <p>29. The “National Rare Earth Strategy” recently launched by India aims to:</p>
+                                <input type="radio" name="q29" value="Reduce reliance on China for critical minerals"> a) Reduce reliance on China for critical minerals<br>
+                                <input type="radio" name="q29" value="Encourage private sector participation in rare earth mining"> b) Encourage private sector participation in rare earth mining<br>
+                                <input type="radio" name="q29" value="Establish strategic stockpiles of rare minerals"> c) Establish strategic stockpiles of rare minerals<br>
+                                <input type="radio" name="q29" value="Promote domestic manufacturing of semiconductors"> d) Promote domestic manufacturing of semiconductors<br>
+                                </div>
+
+                         <div class="question">
+                                <p>30. India's “Neutrino Observatory,” which resumed operations in 2024, is located in:</p>
+                                <input type="radio" name="q30" value="Tamil Nadu"> a) Tamil Nadu<br>
+                                <input type="radio" name="q30" value="Himachal Pradesh"> b) Himachal Pradesh<br>
+                                <input type="radio" name="q30" value="Rajasthan"> c) Rajasthan<br>
+                                <input type="radio" name="q30" value="Kerala"> d) Kerala<br>
+                                </div>
+ </div>
+ <div class="question-container" id="question-container-4">
+        <!-- Questions 31 to 40 -->
+                    <div class="question">
+                    <p>31. The “India-Indonesia Maritime Accord” recently signed is significant because it:</p>
+                   <input type="radio" name="q31" value="Establishes a coordinated patrol mechanism in the Indian Ocean"> a) Establishes a coordinated patrol mechanism in the Indian Ocean<br>
+                   <input type="radio" name="q31" value="Enhances trade in critical minerals"> b) Enhances trade in critical minerals<br>
+                    <input type="radio" name="q31" value="Enables joint naval research on underwater drones"> c) Enables joint naval research on underwater drones<br>
+                   <input type="radio" name="q31" value="Strengthens connectivity through an undersea pipeline"> d) Strengthens connectivity through an undersea pipeline<br>
+                   </div>
+
+                    <div class="question">
+                    <p>32. The “Green Steel Policy” introduced in 2024 focuses on:</p>
+                    <input type="radio" name="q32" value="Reducing carbon emissions in the steel production process"> a) Reducing carbon emissions in the steel production process<br>
+                    <input type="radio" name="q32" value="Increasing India’s steel exports to European markets"> b) Increasing India’s steel exports to European markets<br>
+                    <input type="radio" name="q32" value="Enhancing scrap recycling in steel industries"> c) Enhancing scrap recycling in steel industries<br>
+                    <input type="radio" name="q32" value="Subsidizing the use of electric arc furnaces"> d) Subsidizing the use of electric arc furnaces<br>
+                    </div>
+
+                    <div class="question">
+                    <p>33. The "AI-powered Judiciary Program" launched in India aims to:</p>
+                    <input type="radio" name="q33" value="Reduce pendency of cases through automated legal analysis"> a) Reduce pendency of cases through automated legal analysis<br>
+                    <input type="radio" name="q33" value="Use AI to predict crime patterns in urban areas"> b) Use AI to predict crime patterns in urban areas<br>
+                    <input type="radio" name="q33" value="Enhance cybersecurity in court records"> c) Enhance cybersecurity in court records<br>
+                    <input type="radio" name="q33" value="Develop AI-generated legal judgments"> d) Develop AI-generated legal judgments<br>
+                    </div>
+
+                    <div class="question">
+                    <p>34. India’s first “Underwater Robotics Research Lab” was recently inaugurated in:</p>
+                    <input type="radio" name="q34" value="Chennai"> a) Chennai<br>
+                    <input type="radio" name="q34" value="Visakhapatnam"> b) Visakhapatnam<br>
+                    <input type="radio" name="q34" value="Kochi"> c) Kochi<br>
+                    <input type="radio" name="q34" value="Mumbai"> d) Mumbai<br>
+                    </div>
+
+                    <div class="question">
+                    <p>35. The "Bharat Rare Metals Initiative" was launched in 2024 to:</p>
+                    <input type="radio" name="q35" value="Reduce India's dependency on rare earth imports"> a) Reduce India's dependency on rare earth imports<br>
+                    <input type="radio" name="q35" value="Promote asteroid mining research"> b) Promote asteroid mining research<br>
+                    <input type="radio" name="q35" value="Establish a national rare metal processing industry"> c) Establish a national rare metal processing industry<br>
+                    <input type="radio" name="q35" value="Develop electric vehicle battery components domestically"> d) Develop electric vehicle battery components domestically<br>
+                    </div>
+
+                    <div class="question">
+                    <p>36. The "National Open-Source AI Project" is aimed at:</p>
+                    <input type="radio" name="q36" value="Encouraging indigenous AI research free from corporate control"> a) Encouraging indigenous AI research free from corporate control<br>
+                    <input type="radio" name="q36" value="Creating AI-powered education platforms for students"> b) Creating AI-powered education platforms for students<br>
+                    <input type="radio" name="q36" value="Enhancing India's AI-driven surveillance capabilities"> c) Enhancing India's AI-driven surveillance capabilities<br>
+                    <input type="radio" name="q36" value="Regulating AI applications in military operations"> d) Regulating AI applications in military operations<br>
+                    </div>
+
+                    <div class="question">
+                    <p>37. The "Zero-Emission Rail Corridor" project aims to:</p>
+                    <input type="radio" name="q37" value="Run all major railway lines on renewable energy"> a) Run all major railway lines on renewable energy<br>
+                    <input type="radio" name="q37" value="Reduce diesel locomotive dependency in freight transport"> b) Reduce diesel locomotive dependency in freight transport<br>
+                    <input type="radio" name="q37" value="Introduce electric trains with hydrogen fuel cells"> c) Introduce electric trains with hydrogen fuel cells<br>
+                    <input type="radio" name="q37" value="Develop India's first net-zero carbon railway station"> d) Develop India's first net-zero carbon railway station<br>
+                    </div>
+
+                    <div class="question">
+                    <p>38. India's "Blue Economy Development Fund" was established to:</p>
+                    <input type="radio" name="q38" value="Promote sustainable fisheries and ocean conservation"> a) Promote sustainable fisheries and ocean conservation<br>
+                    <input type="radio" name="q38" value="Fund desalination plants in coastal states"> b) Fund desalination plants in coastal states<br>
+                    <input type="radio" name="q38" value="Develop offshore wind energy farms"> c) Develop offshore wind energy farms<br>
+                    <input type="radio" name="q38" value="Enhance India’s naval maritime capabilities"> d) Enhance India’s naval maritime capabilities<br>
+                    </div>
+
+                    <div class="question">
+                    <p>39. The "Cyber Sovereignty Act 2024" was introduced to:</p>
+                    <input type="radio" name="q39" value="Strengthen data localization and digital autonomy"> a) Strengthen data localization and digital autonomy<br>
+                    <input type="radio" name="q39" value="Regulate AI-generated content online"> b) Regulate AI-generated content online<br>
+                    <input type="radio" name="q39" value="Monitor cryptocurrency transactions more strictly"> c) Monitor cryptocurrency transactions more strictly<br>
+                    <input type="radio" name="q39" value="Prevent foreign influence in India’s digital infrastructure"> d) Prevent foreign influence in India’s digital infrastructure<br>
+                    </div>
+
+                    <div class="question">
+                    <p>40. The "India-Africa Digital Trade Corridor" recently established will:</p>
+                    <input type="radio" name="q40" value="Improve cross-border fintech collaborations"> a) Improve cross-border fintech collaborations<br>
+                    <input type="radio" name="q40" value="Enhance fiber optic connectivity between India and Africa"> b) Enhance fiber optic connectivity between India and Africa<br>
+                    <input type="radio" name="q40" value="Enable digital ID-based trade verification"> c) Enable digital ID-based trade verification<br>
+                    <input type="radio" name="q40" value="Establish blockchain-based financial settlements"> d) Establish blockchain-based financial settlements<br>
+                    </div>
+   </div>
+   <div class="question-container" id="question-container-5">
+     <!-- Questions 41 to 50 -->
+            <div class="question">
+            <p>41. The “National Carbon Market Framework” introduced in 2024 primarily aims to:</p>
+            <input type="radio" name="q41" value="Set up a mandatory carbon credit trading system"> a) Set up a mandatory carbon credit trading system<br>
+            <input type="radio" name="q41" value="Introduce a carbon tax on all industrial emissions"> b) Introduce a carbon tax on all industrial emissions<br>
+            <input type="radio" name="q41" value="Expand India’s forest cover through afforestation bonds"> c) Expand India’s forest cover through afforestation bonds<br>
+            <input type="radio" name="q41" value="Link carbon pricing with international climate agreements"> d) Link carbon pricing with international climate agreements<br>
+            </div>
+
+            <div class="question">
+            <p>42. The "Indian Space Policy 2024" enables:</p>
+            <input type="radio" name="q42" value="100% private sector participation in space exploration"> a) 100% private sector participation in space exploration<br>
+            <input type="radio" name="q42" value="ISRO’s exclusive control over satellite launches"> b) ISRO’s exclusive control over satellite launches<br>
+            <input type="radio" name="q42" value="Commercial space mining in India’s EEZ"> c) Commercial space mining in India’s EEZ<br>
+            <input type="radio" name="q42" value="Collaboration with NATO on space security"> d) Collaboration with NATO on space security<br>
+            </div>
+
+            <div class="question">
+            <p>43. Under the 2024 amendment to the Banking Regulation Act, the RBI now has the power to:</p>
+            <input type="radio" name="q43" value="Regulate digital lending platforms more strictly"> a) Regulate digital lending platforms more strictly<br>
+            <input type="radio" name="q43" value="Nationalize any failing private sector bank"> b) Nationalize any failing private sector bank<br>
+            <input type="radio" name="q43" value="Mandate AI-based fraud detection in banking"> c) Mandate AI-based fraud detection in banking<br>
+            <input type="radio" name="q43" value="Ban cryptocurrency transactions nationwide"> d) Ban cryptocurrency transactions nationwide<br>
+            </div>
+
+            <div class="question">
+            <p>44. The "Global Digital Tax Agreement" signed in 2024 primarily targets:</p>
+            <input type="radio" name="q44" value="Multinational tech corporations avoiding taxes"> a) Multinational tech corporations avoiding taxes<br>
+            <input type="radio" name="q44" value="Cryptocurrency traders using offshore accounts"> b) Cryptocurrency traders using offshore accounts<br>
+            <input type="radio" name="q44" value="Developing nations offering tax havens"> c) Developing nations offering tax havens<br>
+            <input type="radio" name="q44" value="International NGOs receiving foreign funds"> d) International NGOs receiving foreign funds<br>
+            </div>
+
+            <div class="question">
+            <p>45. India’s first “Deep Space Mining Simulation Project” was launched in:</p>
+            <input type="radio" name="q45" value="ISRO’s Sriharikota Space Center"> a) ISRO’s Sriharikota Space Center<br>
+            <input type="radio" name="q45" value="The National Space Research Facility in Bengaluru"> b) The National Space Research Facility in Bengaluru<br>
+            <input type="radio" name="q45" value="The DRDO Space Lab in Hyderabad"> c) The DRDO Space Lab in Hyderabad<br>
+            <input type="radio" name="q45" value="IIT Madras’ Space Research Unit"> d) IIT Madras’ Space Research Unit<br>
+            </div>
+
+            <div class="question">
+            <p>46. The "National Bioengineering Mission" launched in 2024 focuses on:</p>
+            <input type="radio" name="q46" value="Advancing gene-editing technologies in agriculture"> a) Advancing gene-editing technologies in agriculture<br>
+            <input type="radio" name="q46" value="Developing AI-powered robotic prosthetics"> b) Developing AI-powered robotic prosthetics<br>
+            <input type="radio" name="q46" value="Using synthetic biology for environmental conservation"> c) Using synthetic biology for environmental conservation<br>
+            <input type="radio" name="q46" value="Promoting indigenous vaccine production"> d) Promoting indigenous vaccine production<br>
+            </div>
+
+            <div class="question">
+            <p>47. Which initiative under the "New India Semiconductor Policy 2024" focuses on AI chip development?</p>
+            <input type="radio" name="q47" value="BharatAI Chipset Program"> a) BharatAI Chipset Program<br>
+            <input type="radio" name="q47" value="Pradhan Mantri Chip Nirman Yojana"> b) Pradhan Mantri Chip Nirman Yojana<br>
+            <input type="radio" name="q47" value="Atmanirbhar AI Silicon Project"> c) Atmanirbhar AI Silicon Project<br>
+            <input type="radio" name="q47" value="India Semiconductor Innovation Fund"> d) India Semiconductor Innovation Fund<br>
+            </div>
+
+            <div class="question">
+            <p>48. The "National Smart Grid Initiative" aims to:</p>
+            <input type="radio" name="q48" value="Develop AI-based electricity distribution networks"> a) Develop AI-based electricity distribution networks<br>
+            <input type="radio" name="q48" value="Expand India's power capacity by 30% by 2030"> b) Expand India's power capacity by 30% by 2030<br>
+            <input type="radio" name="q48" value="Integrate all regional power grids into one national grid"> c) Integrate all regional power grids into one national grid<br>
+            <input type="radio" name="q48" value="Implement blockchain-based energy transactions"> d) Implement blockchain-based energy transactions<br>
+            </div>
+
+            <div class="question">
+            <p>49. India's first Quantum Computing Research Park was established in:</p>
+            <input type="radio" name="q49" value="Bengaluru"> a) Bengaluru<br>
+            <input type="radio" name="q49" value="Hyderabad"> b) Hyderabad<br>
+            <input type="radio" name="q49" value="Pune"> c) Pune<br>
+            <input type="radio" name="q49" value="Chennai"> d) Chennai<br>
+            </div>
+
+            <div class="question">
+            <p>50. The "Indian Green Bonds Market Expansion Policy" in 2024 focuses on:</p>
+            <input type="radio" name="q50" value="Encouraging domestic investors to buy green bonds"> a) Encouraging domestic investors to buy green bonds<br>
+            <input type="radio" name="q50" value="Allowing 100% FDI in renewable energy bonds"> b) Allowing 100% FDI in renewable energy bonds<br>
+            <input type="radio" name="q50" value="Linking bond returns to India’s carbon neutrality goals"> c) Linking bond returns to India’s carbon neutrality goals<br>
+            <input type="radio" name="q50" value="Establishing an independent regulatory body for green finance"> d) Establishing an independent regulatory body for green finance<br>
+            </div>
+</div>
+<div class="question-container" id="question-container-6">
+ <!-- Questions 51 to 60 -->
+    <div class="question">
+    <p>51. The “Quantum Cryptography Mission” launched in 2024 aims to:</p>
+    <input type="radio" name="q51" value="Secure military communications using quantum technology"> a) Secure military communications using quantum technology<br>
+    <input type="radio" name="q51" value="Develop India’s first quantum computer"> b) Develop India’s first quantum computer<br>
+    <input type="radio" name="q51" value="Enhance financial transactions through quantum encryption"> c) Enhance financial transactions through quantum encryption<br>
+    <input type="radio" name="q51" value="Prevent cyber threats from AI-powered hacking"> d) Prevent cyber threats from AI-powered hacking<br>
+    </div>
+
+    <div class="question">
+    <p>52. Which new initiative under the “National AI Strategy 2024” focuses on ethical AI deployment?</p>
+    <input type="radio" name="q52" value="AI-India Ethical Governance Index"> a) AI-India Ethical Governance Index<br>
+    <input type="radio" name="q52" value="Responsible AI for All Framework"> b) Responsible AI for All Framework<br>
+    <input type="radio" name="q52" value="AI Regulatory Sandbox"> c) AI Regulatory Sandbox<br>
+    <input type="radio" name="q52" value="AI Cybersecurity Assurance Program"> d) AI Cybersecurity Assurance Program<br>
+    </div>
+
+    <div class="question">
+    <p>53. The "Sustainable Deep-Sea Mining Policy" in India aims to:</p>
+    <input type="radio" name="q53" value="Regulate mining activities in India’s EEZ"> a) Regulate mining activities in India’s EEZ<br>
+    <input type="radio" name="q53" value="Promote deep-sea biodiversity conservation"> b) Promote deep-sea biodiversity conservation<br>
+    <input type="radio" name="q53" value="Establish India’s first oceanic resource inventory"> c) Establish India’s first oceanic resource inventory<br>
+    <input type="radio" name="q53" value="Enhance lithium extraction from seabed reserves"> d) Enhance lithium extraction from seabed reserves<br>
+    </div>
+
+    <div class="question">
+    <p>54. India’s first “5G-enabled Smart Port” was recently developed in:</p>
+    <input type="radio" name="q54" value="Mumbai"> a) Mumbai<br>
+    <input type="radio" name="q54" value="Visakhapatnam"> b) Visakhapatnam<br>
+    <input type="radio" name="q54" value="Chennai"> c) Chennai<br>
+    <input type="radio" name="q54" value="Cochin"> d) Cochin<br>
+    </div>
+
+    <div class="question">
+    <p>55. The "National Blockchain Policy 2024" primarily aims to:</p>
+    <input type="radio" name="q55" value="Promote digital ledger technology in governance"> a) Promote digital ledger technology in governance<br>
+    <input type="radio" name="q55" value="Regulate cryptocurrency transactions"> b) Regulate cryptocurrency transactions<br>
+    <input type="radio" name="q55" value="Establish a centralized blockchain for land records"> c) Establish a centralized blockchain for land records<br>
+    <input type="radio" name="q55" value="Enhance blockchain-powered financial contracts"> d) Enhance blockchain-powered financial contracts<br>
+    </div>
+
+    <div class="question">
+    <p>56. India’s “Mars Sample Return Mission” scheduled for 2030 aims to:</p>
+    <input type="radio" name="q56" value="Collect and analyze soil samples from Mars"> a) Collect and analyze soil samples from Mars<br>
+    <input type="radio" name="q56" value="Study microbial life in Martian craters"> b) Study microbial life in Martian craters<br>
+    <input type="radio" name="q56" value="Develop AI-driven rovers for deep space exploration"> c) Develop AI-driven rovers for deep space exploration<br>
+    <input type="radio" name="q56" value="Test nuclear-powered propulsion for Mars missions"> d) Test nuclear-powered propulsion for Mars missions<br>
+    </div>
+
+    <div class="question">
+    <p>57. The “Global Hydrogen Grid Initiative” in which India is a participant focuses on:</p>
+    <input type="radio" name="q57" value="Developing an international hydrogen trade network"> a) Developing an international hydrogen trade network<br>
+    <input type="radio" name="q57" value="Creating green hydrogen storage hubs worldwide"> b) Creating green hydrogen storage hubs worldwide<br>
+    <input type="radio" name="q57" value="Enhancing hydrogen-based electric vehicle adoption"> c) Enhancing hydrogen-based electric vehicle adoption<br>
+    <input type="radio" name="q57" value="Integrating hydrogen into smart city projects"> d) Integrating hydrogen into smart city projects<br>
+    </div>
+
+    <div class="question">
+    <p>58. The "National Data Protection Bill 2024" proposes:</p>
+    <input type="radio" name="q58" value="Strict regulations for cross-border data transfers"> a) Strict regulations for cross-border data transfers<br>
+    <input type="radio" name="q58" value="Mandatory government control over all private data"> b) Mandatory government control over all private data<br>
+    <input type="radio" name="q58" value="A nationwide biometric identity integration system"> c) A nationwide biometric identity integration system<br>
+    <input type="radio" name="q58" value="State-led data monitoring initiatives"> d) State-led data monitoring initiatives<br>
+    </div>
+
+    <div class="question">
+    <p>59. The “Digital India Judiciary Project” aims to:</p>
+    <input type="radio" name="q59" value="Implement AI-based case resolution in courts"> a) Implement AI-based case resolution in courts<br>
+    <input type="radio" name="q59" value="Enable blockchain-powered court records"> b) Enable blockchain-powered court records<br>
+    <input type="radio" name="q59" value="Establish virtual courts for civil litigation"> c) Establish virtual courts for civil litigation<br>
+    <input type="radio" name="q59" value="Enhance cybersecurity in legal proceedings"> d) Enhance cybersecurity in legal proceedings<br>
+    </div>
+
+    <div class="question">
+    <p>60. India's "First AI-driven Weather Prediction System" launched in 2024 is known as:</p>
+    <input type="radio" name="q60" value="VAYU-AI"> a) VAYU-AI<br>
+    <input type="radio" name="q60" value="Meghdoot 2.0"> b) Meghdoot 2.0<br>
+    <input type="radio" name="q60" value="IndraNet"> c) IndraNet<br>
+    <input type="radio" name="q60" value="Prakriti AI"> d) Prakriti AI<br>
+    </div>
+</div>
+<div class="question-container" id="question-container-7">
+<!-- Questions 61 to 70 -->
+<div class="question">
+    <p>61. The “One Nation, One Language” debate resurfaced in 2024 due to:</p>
+    <input type="radio" name="q61" value="The introduction of a common script for regional languages"> a) The introduction of a common script for regional languages<br>
+    <input type="radio" name="q61" value="A new push for Hindi as a national language"> b) A new push for Hindi as a national language<br>
+    <input type="radio" name="q61" value="AI-driven language translation projects in governance"> c) AI-driven language translation projects in governance<br>
+    <input type="radio" name="q61" value="Controversies over official language policies"> d) Controversies over official language policies<br>
+    </div>
+
+    <div class="question">
+    <p>62. The “Crypto Regulation Act 2024” in India imposes:</p>
+    <input type="radio" name="q62" value="A mandatory licensing requirement for crypto exchanges"> a) A mandatory licensing requirement for crypto exchanges<br>
+    <input type="radio" name="q62" value="A complete ban on cryptocurrency trading"> b) A complete ban on cryptocurrency trading<br>
+    <input type="radio" name="q62" value="A tax exemption for blockchain-based businesses"> c) A tax exemption for blockchain-based businesses<br>
+    <input type="radio" name="q62" value="Regulation of decentralized finance platforms"> d) Regulation of decentralized finance platforms<br>
+    </div>
+
+    <div class="question">
+    <p>63. India's “Deep Space Radar Project” is expected to:</p>
+    <input type="radio" name="q63" value="Detect potential asteroid threats to Earth"> a) Detect potential asteroid threats to Earth<br>
+    <input type="radio" name="q63" value="Monitor space debris in geostationary orbits"> b) Monitor space debris in geostationary orbits<br>
+    <input type="radio" name="q63" value="Assist lunar lander missions with precise mapping"> c) Assist lunar lander missions with precise mapping<br>
+    <input type="radio" name="q63" value="Develop AI-powered tracking systems for rogue satellites"> d) Develop AI-powered tracking systems for rogue satellites<br>
+    </div>
+
+    <div class="question">
+    <p>64. Which of the following Indian states recently launched the "Mission Zero Stunting" initiative?</p>
+    <input type="radio" name="q64" value="Bihar"> a) Bihar<br>
+    <input type="radio" name="q64" value="Madhya Pradesh"> b) Madhya Pradesh<br>
+    <input type="radio" name="q64" value="Uttar Pradesh"> c) Uttar Pradesh<br>
+    <input type="radio" name="q64" value="Odisha"> d) Odisha<br>
+    </div>
+
+    <div class="question">
+    <p>65. The "Gaganyaan Abort Mission-2" was conducted to test which of the following?</p>
+    <input type="radio" name="q65" value="Crew module re-entry capability"> a) Crew module re-entry capability<br>
+    <input type="radio" name="q65" value="Emergency escape system"> b) Emergency escape system<br>
+    <input type="radio" name="q65" value="Space docking mechanisms"> c) Space docking mechanisms<br>
+    <input type="radio" name="q65" value="Lunar landing prototypes"> d) Lunar landing prototypes<br>
+    </div>
+
+    <div class="question">
+    <p>66. Which country recently became the largest trading partner of India, surpassing China?</p>
+    <input type="radio" name="q66" value="USA"> a) USA<br>
+    <input type="radio" name="q66" value="UAE"> b) UAE<br>
+    <input type="radio" name="q66" value="Japan"> c) Japan<br>
+    <input type="radio" name="q66" value="Germany"> d) Germany<br>
+    </div>
+
+    <div class="question">
+    <p>67. The newly launched "Project Dolphin 2.0" focuses on the conservation of which species?</p>
+    <input type="radio" name="q67" value="Ganges River Dolphin"> a) Ganges River Dolphin<br>
+    <input type="radio" name="q67" value="Humpback Dolphin"> b) Humpback Dolphin<br>
+    <input type="radio" name="q67" value="Irrawaddy Dolphin"> c) Irrawaddy Dolphin<br>
+    <input type="radio" name="q67" value="Finless Porpoise"> d) Finless Porpoise<br>
+    </div>
+
+    <div class="question">
+    <p>68. The "Digital India Amendment Bill 2024" introduced which major reform?</p>
+    <input type="radio" name="q68" value="Ban on VPN services"> a) Ban on VPN services<br>
+    <input type="radio" name="q68" value="Mandatory AI-driven surveillance"> b) Mandatory AI-driven surveillance<br>
+    <input type="radio" name="q68" value="Data localization mandates"> c) Data localization mandates<br>
+    <input type="radio" name="q68" value="Blockchain integration in public records"> d) Blockchain integration in public records<br>
+    </div>
+
+    <div class="question">
+    <p>69. The "Bharat Semiconductor Mission" was recently launched to:</p>
+    <input type="radio" name="q69" value="Increase semiconductor production in India"> a) Increase semiconductor production in India<br>
+    <input type="radio" name="q69" value="Reduce reliance on imported microchips"> b) Reduce reliance on imported microchips<br>
+    <input type="radio" name="q69" value="Set up new fabrication plants"> c) Set up new fabrication plants<br>
+    <input type="radio" name="q69" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>70. The "India-ASEAN Maritime Exercise 2024" was held in which region?</p>
+    <input type="radio" name="q70" value="Bay of Bengal"> a) Bay of Bengal<br>
+    <input type="radio" name="q70" value="Arabian Sea"> b) Arabian Sea<br>
+    <input type="radio" name="q70" value="South China Sea"> c) South China Sea<br>
+    <input type="radio" name="q70" value="Indian Ocean"> d) Indian Ocean<br>
+    </div>
+</div>
+<div class="question-container" id="question-container-8">
+<!-- Questions 71 to 80 -->
+    <div class="question">
+    <p>71. The newly proposed "One Health Mission" is primarily aimed at addressing:</p>
+    <input type="radio" name="q71" value="Zoonotic diseases"> a) Zoonotic diseases<br>
+    <input type="radio" name="q71" value="Waterborne infections"> b) Waterborne infections<br>
+    <input type="radio" name="q71" value="AI-driven disease diagnostics"> c) AI-driven disease diagnostics<br>
+    <input type="radio" name="q71" value="Cancer treatment research"> d) Cancer treatment research<br>
+    </div>
+
+    <div class="question">
+    <p>72. India's first "Hydrogen Train" was launched in which state?</p>
+    <input type="radio" name="q72" value="Maharashtra"> a) Maharashtra<br>
+    <input type="radio" name="q72" value="Gujarat"> b) Gujarat<br>
+    <input type="radio" name="q72" value="Rajasthan"> c) Rajasthan<br>
+    <input type="radio" name="q72" value="Tamil Nadu"> d) Tamil Nadu<br>
+    </div>
+
+    <div class="question">
+    <p>73. The "Mission Amrit Sarovar" is associated with:</p>
+    <input type="radio" name="q73" value="Water conservation"> a) Water conservation<br>
+    <input type="radio" name="q73" value="Promotion of hydroelectric projects"> b) Promotion of hydroelectric projects<br>
+    <input type="radio" name="q73" value="Groundwater regulation"> c) Groundwater regulation<br>
+    <input type="radio" name="q73" value="Clean-up of Indian rivers"> d) Clean-up of Indian rivers<br>
+    </div>
+
+    <div class="question">
+    <p>74. The "India-Africa Defence Dialogue 2024" was held in which Indian city?</p>
+    <input type="radio" name="q74" value="New Delhi"> a) New Delhi<br>
+    <input type="radio" name="q74" value="Bengaluru"> b) Bengaluru<br>
+    <input type="radio" name="q74" value="Chennai"> c) Chennai<br>
+    <input type="radio" name="q74" value="Gandhinagar"> d) Gandhinagar<br>
+    </div>
+
+    <div class="question">
+    <p>75. The "Dark Matter Research Initiative," recently funded by the Government of India, is associated with which institute?</p>
+    <input type="radio" name="q75" value="ISRO"> a) ISRO<br>
+    <input type="radio" name="q75" value="BARC"> b) BARC<br>
+    <input type="radio" name="q75" value="IISc Bangalore"> c) IISc Bangalore<br>
+    <input type="radio" name="q75" value="TIFR"> d) TIFR<br>
+    </div>
+
+    <div class="question">
+    <p>76. The "Ayushman Bharat Digital Health Mission" aims to:</p>
+    <input type="radio" name="q76" value="Provide digital health IDs to citizens"> a) Provide digital health IDs to citizens<br>
+    <input type="radio" name="q76" value="Launch AI-driven diagnosis tools"> b) Launch AI-driven diagnosis tools<br>
+    <input type="radio" name="q76" value="Digitize hospital records"> c) Digitize hospital records<br>
+    <input type="radio" name="q76" value="Both a and c"> d) Both a and c<br>
+    </div>
+
+    <div class="question">
+    <p>77. Which country recently signed a Free Trade Agreement (FTA) with India?</p>
+    <input type="radio" name="q77" value="United Kingdom"> a) United Kingdom<br>
+    <input type="radio" name="q77" value="Canada"> b) Canada<br>
+    <input type="radio" name="q77" value="South Korea"> c) South Korea<br>
+    <input type="radio" name="q77" value="France"> d) France<br>
+    </div>
+
+    <div class="question">
+    <p>78. The "National Quantum Computing Mission" was launched to:</p>
+    <input type="radio" name="q78" value="Develop India’s first quantum computer"> a) Develop India’s first quantum computer<br>
+    <input type="radio" name="q78" value="Train AI models with quantum algorithms"> b) Train AI models with quantum algorithms<br>
+    <input type="radio" name="q78" value="Promote quantum cryptography"> c) Promote quantum cryptography<br>
+    <input type="radio" name="q78" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>79. Which Indian city became the first to implement AI-based traffic management on a large scale?</p>
+    <input type="radio" name="q79" value="Bengaluru"> a) Bengaluru<br>
+    <input type="radio" name="q79" value="Mumbai"> b) Mumbai<br>
+    <input type="radio" name="q79" value="Hyderabad"> c) Hyderabad<br>
+    <input type="radio" name="q79" value="Delhi"> d) Delhi<br>
+    </div>
+
+    <div class="question">
+    <p>80. The "Mera Gaon, Meri Dharohar" scheme is related to:</p>
+    <input type="radio" name="q80" value="Heritage conservation in villages"> a) Heritage conservation in villages<br>
+    <input type="radio" name="q80" value="Financial inclusion in rural areas"> b) Financial inclusion in rural areas<br>
+    <input type="radio" name="q80" value="Skill development in villages"> c) Skill development in villages<br>
+    <input type="radio" name="q80" value="Renewable energy expansion"> d) Renewable energy expansion<br>
+    </div>
+</div>
+<div class="question-container" id="question-container-9">
+<!-- Questions 81 to 90 -->
+    <div class="question">
+    <p>81. The "Carbon Border Adjustment Mechanism" (CBAM) was introduced by:</p>
+    <input type="radio" name="q81" value="United Nations"> a) United Nations<br>
+    <input type="radio" name="q81" value="European Union"> b) European Union<br>
+    <input type="radio" name="q81" value="World Trade Organization"> c) World Trade Organization<br>
+    <input type="radio" name="q81" value="G7 Nations"> d) G7 Nations<br>
+    </div>
+
+    <div class="question">
+    <p>82. The "Vaccine Maitri 2.0" initiative focuses on:</p>
+    <input type="radio" name="q82" value="COVID-19 vaccine exports"> a) COVID-19 vaccine exports<br>
+    <input type="radio" name="q82" value="Research on new pandemic prevention"> b) Research on new pandemic prevention<br>
+    <input type="radio" name="q82" value="Distribution of generic medicines"> c) Distribution of generic medicines<br>
+    <input type="radio" name="q82" value="Polio eradication"> d) Polio eradication<br>
+    </div>
+
+    <div class="question">
+    <p>83. India recently hosted the "Global AI Summit" in which city?</p>
+    <input type="radio" name="q83" value="Hyderabad"> a) Hyderabad<br>
+    <input type="radio" name="q83" value="Bengaluru"> b) Bengaluru<br>
+    <input type="radio" name="q83" value="New Delhi"> c) New Delhi<br>
+    <input type="radio" name="q83" value="Mumbai"> d) Mumbai<br>
+    </div>
+
+    <div class="question">
+    <p>84. The "International Solar Alliance" (ISA) recently launched which initiative?</p>
+    <input type="radio" name="q84" value="Global Solar Grid Program"> a) Global Solar Grid Program<br>
+    <input type="radio" name="q84" value="One Sun, One World, One Grid"> b) One Sun, One World, One Grid<br>
+    <input type="radio" name="q84" value="Solar Energy for Rural Areas"> c) Solar Energy for Rural Areas<br>
+    <input type="radio" name="q84" value="Decarbonization of Urban Cities"> d) Decarbonization of Urban Cities<br>
+    </div>
+
+    <div class="question">
+    <p>85. The "National Cyber Security Strategy 2024" includes provisions for:</p>
+    <input type="radio" name="q85" value="AI-based threat detection"> a) AI-based threat detection<br>
+    <input type="radio" name="q85" value="Strengthening data encryption laws"> b) Strengthening data encryption laws<br>
+    <input type="radio" name="q85" value="Creation of a National Cybersecurity Command"> c) Creation of a National Cybersecurity Command<br>
+    <input type="radio" name="q85" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>86. The "Green Steel Initiative" is aimed at:</p>
+    <input type="radio" name="q86" value="Reducing carbon emissions from steel production"> a) Reducing carbon emissions from steel production<br>
+    <input type="radio" name="q86" value="Using hydrogen in steel-making processes"> b) Using hydrogen in steel-making processes<br>
+    <input type="radio" name="q86" value="Promoting electric furnaces in steel plants"> c) Promoting electric furnaces in steel plants<br>
+    <input type="radio" name="q86" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>87. The "Arctic Policy of India" aims at:</p>
+    <input type="radio" name="q87" value="Strengthening India’s scientific research in the Arctic"> a) Strengthening India’s scientific research in the Arctic<br>
+    <input type="radio" name="q87" value="Ensuring energy security from Arctic reserves"> b) Ensuring energy security from Arctic reserves<br>
+    <input type="radio" name="q87" value="Expanding trade routes in the Arctic Ocean"> c) Expanding trade routes in the Arctic Ocean<br>
+    <input type="radio" name="q87" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>88. The "India-Middle East-Europe Corridor" (IMEC) is intended to:</p>
+    <input type="radio" name="q88" value="Create an alternative trade route"> a) Create an alternative trade route<br>
+    <input type="radio" name="q88" value="Enhance maritime security"> b) Enhance maritime security<br>
+    <input type="radio" name="q88" value="Improve India’s connectivity with Europe"> c) Improve India’s connectivity with Europe<br>
+    <input type="radio" name="q88" value="Both a and c"> d) Both a and c<br>
+    </div>
+
+    <div class="question">
+    <p>89. The "National AI Mission" was launched to:</p>
+    <input type="radio" name="q89" value="Promote AI start-ups"> a) Promote AI start-ups<br>
+    <input type="radio" name="q89" value="Integrate AI in governance"> b) Integrate AI in governance<br>
+    <input type="radio" name="q89" value="Improve AI-based defense systems"> c) Improve AI-based defense systems<br>
+    <input type="radio" name="q89" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>90. The "Blue Economy Vision 2024" emphasizes:</p>
+    <input type="radio" name="q90" value="Sustainable marine resource utilization"> a) Sustainable marine resource utilization<br>
+    <input type="radio" name="q90" value="Expansion of India's fisheries sector"> b) Expansion of India's fisheries sector<br>
+    <input type="radio" name="q90" value="Strengthening deep-sea mining policies"> c) Strengthening deep-sea mining policies<br>
+    <input type="radio" name="q90" value="All of the above"> d) All of the above<br>
+    </div>
+</div>
+<div class="question-container" id="question-container-10">
+<!-- Questions 91 to 100 -->
+    <div class="question">
+    <p>91. The "Bharat Energy Storage Mission" focuses on:</p>
+    <input type="radio" name="q91" value="Large-scale battery production"> a) Large-scale battery production<br>
+    <input type="radio" name="q91" value="Development of pumped hydro storage"> b) Development of pumped hydro storage<br>
+    <input type="radio" name="q91" value="Integration of battery storage in renewable energy grids"> c) Integration of battery storage in renewable energy grids<br>
+    <input type="radio" name="q91" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>92. Which river was recently declared as the "Legal Entity" in India?</p>
+    <input type="radio" name="q92" value="Yamuna"> a) Yamuna<br>
+    <input type="radio" name="q92" value="Ganga"> b) Ganga<br>
+    <input type="radio" name="q92" value="Godavari"> c) Godavari<br>
+    <input type="radio" name="q92" value="Narmada"> d) Narmada<br>
+    </div>
+
+    <div class="question">
+    <p>93. The "National Deep-Sea Mission" is aimed at:</p>
+    <input type="radio" name="q93" value="Mining rare earth minerals from the ocean"> a) Mining rare earth minerals from the ocean<br>
+    <input type="radio" name="q93" value="Studying marine biodiversity"> b) Studying marine biodiversity<br>
+    <input type="radio" name="q93" value="Developing deep-sea submersibles"> c) Developing deep-sea submersibles<br>
+    <input type="radio" name="q93" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>94. The "National Green Tribunal (NGT)" recently banned which of the following?</p>
+    <input type="radio" name="q94" value="Use of single-use plastic nationwide"> a) Use of single-use plastic nationwide<br>
+    <input type="radio" name="q94" value="Construction near ecologically sensitive zones"> b) Construction near ecologically sensitive zones<br>
+    <input type="radio" name="q94" value="Deep-sea fishing without licenses"> c) Deep-sea fishing without licenses<br>
+    <input type="radio" name="q94" value="Import of hazardous e-waste"> d) Import of hazardous e-waste<br>
+    </div>
+
+    <div class="question">
+    <p>95. The "Decentralized Renewable Energy (DRE) Policy" promotes:</p>
+    <input type="radio" name="q95" value="Rooftop solar adoption"> a) Rooftop solar adoption<br>
+    <input type="radio" name="q95" value="Village-level bio-energy projects"> b) Village-level bio-energy projects<br>
+    <input type="radio" name="q95" value="Community-led wind energy farms"> c) Community-led wind energy farms<br>
+    <input type="radio" name="q95" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>96. The "National Food Security Act" was recently amended to:</p>
+    <input type="radio" name="q96" value="Increase the quantity of subsidized food grains"> a) Increase the quantity of subsidized food grains<br>
+    <input type="radio" name="q96" value="Extend coverage to migrant workers"> b) Extend coverage to migrant workers<br>
+    <input type="radio" name="q96" value="Introduce fortified rice under PDS"> c) Introduce fortified rice under PDS<br>
+    <input type="radio" name="q96" value="Both b and c"> d) Both b and c<br>
+    </div>
+
+    <div class="question">
+    <p>97. Which Indian company recently became the first to manufacture semiconductors domestically?</p>
+    <input type="radio" name="q97" value="Tata Electronics"> a) Tata Electronics<br>
+    <input type="radio" name="q97" value="Reliance Digital"> b) Reliance Digital<br>
+    <input type="radio" name="q97" value="Bharat Heavy Electricals Limited"> c) Bharat Heavy Electricals Limited<br>
+    <input type="radio" name="q97" value="Hindustan Semiconductors"> d) Hindustan Semiconductors<br>
+    </div>
+
+    <div class="question">
+    <p>98. The "India-Brazil-South Africa (IBSA) Fund" is dedicated to:</p>
+    <input type="radio" name="q98" value="Development projects in Global South nations"> a) Development projects in Global South nations<br>
+    <input type="radio" name="q98" value="AI and digital transformation initiatives"> b) AI and digital transformation initiatives<br>
+    <input type="radio" name="q98" value="Infrastructure development in member countries"> c) Infrastructure development in member countries<br>
+    <input type="radio" name="q98" value="Strategic defense collaboration"> d) Strategic defense collaboration<br>
+    </div>
+
+    <div class="question">
+    <p>99. The "National Digital Library" was recently expanded to include:</p>
+    <input type="radio" name="q99" value="AI-powered search tools"> a) AI-powered search tools<br>
+    <input type="radio" name="q99" value="Vernacular language support"> b) Vernacular language support<br>
+    <input type="radio" name="q99" value="Free access to all UPSC materials"> c) Free access to all UPSC materials<br>
+    <input type="radio" name="q99" value="All of the above"> d) All of the above<br>
+    </div>
+
+    <div class="question">
+    <p>100. The "National Urban Mobility Plan" aims to:</p>
+    <input type="radio" name="q100" value="Reduce traffic congestion in metropolitan cities"> a) Reduce traffic congestion in metropolitan cities<br>
+    <input type="radio" name="q100" value="Promote electric public transport systems"> b) Promote electric public transport systems<br>
+    <input type="radio" name="q100" value="Establish pedestrian-friendly smart cities"> c) Establish pedestrian-friendly smart cities<br>
+    <input type="radio" name="q100" value="All of the above"> d) All of the above<br>
+    </div>
+</div>
+
+        <div id="navigation-buttons">
+        <button type="button" id="prevPage" onclick="changePage(-1)">Previous</button>
+        <button type="button" id="nextPage" onclick="changePage(1)">Next</button>
+        <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+    </div>
+</form>
+
+<div id="score" style="display:none;"></div>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 10; // Two pages
+let timer;
+let timeLeft = 120 * 60; // 120 minutes in seconds
+let intervalID;
+
+const correctAnswers = {
+    q1: 'Kerala',
+    q2: 'Hydrothermal vents and polymetallic nodules',
+q3: 'Japan',
+q4: 'Ethical deployment of AI in governance',
+q5: 'Enhance India\'s cybersecurity infrastructure',
+q6: 'UN General Assembly',
+q7: '10%',
+q8: 'Identify genetic markers for hereditary diseases',
+q9: 'Yamuna',
+q10: 'Counter-terrorism in Jammu & Kashmir', q11: 'Implement blockchain in land records and governance',
+q12: 'Rajasthan',
+q13: 'Riverine dolphins in the Ganges and Brahmaputra',
+q14: 'Extraction of Helium-3 for future energy use',
+q15: 'Zoonotic diseases and integrated human-animal health',
+q16: 'Karnataka',
+q17: 'New Delhi',
+q18: 'Blockchain-based trade documentation',
+q19: 'Promote robotic automation in MSME industries',
+q20: 'Track near-Earth objects and potential asteroid threats',
+q21: 'The adoption of fintech solutions across states',
+q22: 'Maritime security cooperation with Indo-Pacific nations',
+q23: 'Enhance interstate renewable energy transmission infrastructure',
+q24: 'Pahari Ethnic Group of Jammu & Kashmir',
+q25: 'Prevent bioterrorism and lab-based pathogen risks',
+q26: 'Detect and neutralize unauthorized UAVs',
+q27: 'Joint research in hydrogen energy and carbon capture',
+q28: 'Preventing algorithmic bias in AI decision-making',
+q29: 'Reduce reliance on China for critical minerals',
+q30: 'Tamil Nadu', q31: 'Establishes a coordinated patrol mechanism in the Indian Ocean',
+q32: 'Reducing carbon emissions in the steel production process',
+q33: 'Reduce pendency of cases through automated legal analysis',
+q34: 'Visakhapatnam',
+q35: 'Reduce India\'s dependency on rare earth imports',
+q36: 'Encouraging indigenous AI research free from corporate control',
+q37: 'Run all major railway lines on renewable energy',
+q38: 'Promote sustainable fisheries and ocean conservation',
+q39: 'Strengthen data localization and digital autonomy',
+q40: 'Improve cross-border fintech collaborations', q41: 'Set up a mandatory carbon credit trading system',
+q42: '100% private sector participation in space exploration',
+q43: 'Regulate digital lending platforms more strictly',
+q44: 'Multinational tech corporations avoiding taxes',
+q45: 'The National Space Research Facility in Bengaluru',
+q46: 'Using synthetic biology for environmental conservation',
+q47: 'BharatAI Chipset Program',
+q48: 'Develop AI-based electricity distribution networks',
+q49: 'Bengaluru',
+q50: 'Linking bond returns to India’s carbon neutrality goals', q51: 'Secure military communications using quantum technology',
+q52: 'Responsible AI for All Framework',
+q53: 'Regulate mining activities in India’s EEZ',
+q54: 'Visakhapatnam',
+q55: 'Promote digital ledger technology in governance',
+q56: 'Collect and analyze soil samples from Mars',
+q57: 'Developing an international hydrogen trade network',
+q58: 'Strict regulations for cross-border data transfers',
+q59: 'Establish virtual courts for civil litigation',
+q60: 'Meghdoot 2.0',  q61: 'Controversies over official language policies',
+q62: 'A mandatory licensing requirement for crypto exchanges',
+q63: 'Detect potential asteroid threats to Earth',
+q64: 'Odisha',
+q65: 'Emergency escape system',
+q66: 'USA',
+q67: 'Ganges River Dolphin',
+q68: 'Data localization mandates',
+q69: 'All of the above',
+q70: 'Bay of Bengal', q71: 'Zoonotic diseases',
+q72: 'Rajasthan',
+q73: 'Water conservation',
+q74: 'Gandhinagar',
+q75: 'TIFR',
+q76: 'Both a and c',
+q77: 'United Kingdom',
+q78: 'All of the above',
+q79: 'Hyderabad',
+q80: 'Heritage conservation in villages', q81: 'European Union',
+q82: 'Research on new pandemic prevention',
+q83: 'New Delhi',
+q84: 'One Sun, One World, One Grid',
+q85: 'All of the above',
+q86: 'All of the above',
+q87: 'All of the above',
+q88: 'Both a and c',
+q89: 'All of the above',
+q90: 'All of the above',  q91: 'All of the above',
+q92: 'Ganga',
+q93: 'All of the above',
+q94: 'Construction near ecologically sensitive zones',
+q95: 'All of the above',
+q96: 'Both b and c',
+q97: 'Tata Electronics',
+q98: 'Development projects in Global South nations',
+q99: 'All of the above',
+q100: 'All of the above'
+};
+
+function startTimer() {
+    intervalID = setInterval(function () {
+        if (timeLeft <= 0) {
+            clearInterval(intervalID);
+            alert("Time's up!");
+            document.getElementById('testForm').submit();
+        } else {
+            timeLeft--;
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        }
+    }, 1000);
+}
+
+function changePage(direction) {
+document.getElementById(`question-container-${currentPage}`).classList.remove('active');
+currentPage += direction;
+document.getElementById(`question-container-${currentPage}`).classList.add('active');
+
+document.getElementById('prevPage').disabled = currentPage === 1;
+document.getElementById('nextPage').disabled = currentPage === totalPages;
+
+// Show submit button on the last page, hide it on others
+if (currentPage === totalPages) {
+document.getElementById('submitBtn').style.display = 'inline-block';
+} else {
+document.getElementById('submitBtn').style.display = 'none';
+}
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    clearInterval(intervalID); // Stop the timer on submit
+    let score = 0;
+    for (let i = 1; i <= 100; i++) {
+        const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    document.getElementById('testForm').style.display = 'none';
+    document.getElementById('score').style.display = 'block';
+    document.getElementById('score').innerHTML = `Your score: ${score}/100`;
+}
+
+startTimer();
+</script>
+</body>
+</html>
