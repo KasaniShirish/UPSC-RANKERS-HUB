@@ -1,4 +1,5 @@
 const express = require("express");
+const bcryptjs = require("bcryptjs");
 const router = express.Router();
 const fs = require("fs");
 
@@ -9,7 +10,7 @@ let users = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 const saveUsers = (users) => fs.writeFileSync("data.json", JSON.stringify(users, null, 2));
 
 // Signup Route (POST /auth/signup)
-router.post("/signup", (req, res) => {
+router.post("/signup", async (req, res) => {
   const { username, password } = req.body;
   console.log("🔧 Signup request for username:", username);
 
@@ -18,46 +19,69 @@ router.post("/signup", (req, res) => {
     return res.status(400).send("Username and password are required");
   }
 
-  if (users.find((user) => user.username === username)) {
+  // Check if the user already exists
+  if (users[username]) {
     console.log("⚠️ User already exists:", username);
     return res.status(400).send("User already exists");
   }
 
-  const newUser = { username, password, attempts: 0 };
-  users.push(newUser);
-  saveUsers(users);
+  try {
+    // Hash password
+    const hashedPassword = await bcryptjs.hash(password, 10);
+    console.log("🔐 Hashed password:", hashedPassword);  // Log hashed password
 
-  console.log("✅ New user created:", newUser);
-  res.status(201).send("User created successfully");
+    // Save the new user with hashed password
+    users[username] = hashedPassword;
+    saveUsers(users);
+
+    console.log("✅ New user created:", { username, password: hashedPassword });
+    res.status(201).send("User created successfully");
+  } catch (error) {
+    console.log("❌ Error hashing password:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 // Login Route (POST /auth/login)
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   console.log("🔧 Login attempt for username:", username);
 
-  const user = users.find((user) => user.username === username);
-  if (!user || user.password !== password) {
-    console.log("❌ Invalid username or password for:", username);
+  // Find user by username
+  const hashedPassword = users[username];
+
+  if (!hashedPassword) {
+    console.log("❌ User not found for username:", username);
     return res.status(400).send("Invalid username or password");
   }
 
-  console.log("✅ Login successful for:", username);
-  res.status(200).send("Login successful");
+  try {
+    // Compare entered password with stored hashed password
+    const isMatch = await bcryptjs.compare(password, hashedPassword);
+    if (!isMatch) {
+      console.log("❌ Invalid password for:", username);
+      return res.status(400).send("Invalid username or password");
+    }
+
+    console.log("✅ Login successful for:", username);
+    res.status(200).send("Login successful");
+  } catch (error) {
+    console.log("❌ Error comparing passwords:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 // Forgot Password Route (POST /auth/forgot-password)
 router.post("/forgot-password", (req, res) => {
   const { username, newPassword } = req.body;
   console.log("🔍 Reset password request for:", username);
-  console.log("📌 Current users data:", users);
 
   if (!username || !newPassword) {
     console.log("❌ Missing username or new password");
     return res.status(400).send("Username and new password are required");
   }
 
-  const user = users.find((user) => user.username === username);
+  const user = users[username];
   if (!user) {
     console.log("❌ User not found in data.json! Username:", username);
     return res.status(404).send("User not found");
@@ -68,11 +92,20 @@ router.post("/forgot-password", (req, res) => {
     return res.status(400).send("New password must be at least 4 characters long");
   }
 
-  user.password = newPassword;
-  saveUsers(users);
+  // Hash the new password before saving
+  bcryptjs.hash(newPassword, 10, (err, hashedPassword) => {
+    if (err) {
+      console.log("❌ Error hashing password:", err);
+      return res.status(500).send("Internal Server Error");
+    }
 
-  console.log("✅ Password updated successfully for:", username);
-  res.status(200).send("Password reset successfully");
+    // Update the password for the user
+    users[username] = hashedPassword;
+    saveUsers(users);
+
+    console.log("✅ Password updated successfully for:", username);
+    res.status(200).send("Password reset successfully");
+  });
 });
 
 module.exports = router;

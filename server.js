@@ -61,7 +61,7 @@ app.post("/auth/login", (req, res) => {
 
     if (users[username] && users[username] === password) {
         console.log(`✅ User logged in: ${username}`);
-        res.redirect("/dashboard");
+        res.redirect("/dashboard"); 
     } else {
         console.log("❌ Invalid credentials", { storedPassword: users[username], enteredPassword: password });
         res.status(401).send("❌ Login failed: Invalid credentials.");
@@ -92,7 +92,10 @@ app.post("/auth/forgot-password", (req, res) => {
     }
 });
 
-
+// Serve the test page
+app.get("/test", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "test.html"));
+});
 
 // Start the server
 app.listen(port, () => console.log(`✅ Server running on port ${port}`));
