@@ -1,8 +1,13 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");  // Keep using bcryptjs
 const User = require("../models/User");
+const Razorpay = require("razorpay");
 
 const router = express.Router();
+const razorpay = new Razorpay({
+  key_id: "YOUR_RAZORPAY_KEY_ID",
+  key_secret: "YOUR_RAZORPAY_KEY_SECRET",
+});
 const saltRounds = 10; // Number of rounds for bcryptjs hashing
 
 // ✅ Signup Route (Only username + password)
@@ -138,6 +143,25 @@ router.post('/confirm-payment', async (req, res) => {
   } catch (err) {
     console.error("❌ Error confirming payment:", err);
     res.status(500).json({ error: 'Server error while confirming payment.' });
+  }
+});
+
+// Create Razorpay Order
+router.post("/create-order", async (req, res) => {
+  const amount = 799;
+
+  const options = {
+    amount: amount * 100, // convert to paise
+    currency: "INR",
+    receipt: `receipt_order_${Date.now()}`,
+  };
+
+  try {
+    const order = await razorpay.orders.create(options);
+    res.json(order);
+  } catch (err) {
+    console.error("❌ Error creating Razorpay order:", err);
+    res.status(500).json({ error: "Server error: Unable to create order" });
   }
 });
 
