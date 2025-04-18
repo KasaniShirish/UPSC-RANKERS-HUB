@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #E3E2DF;
+      background-color: #EDC7B7;
       text-align: center;
       padding-top: 0;  /* Remove padding from top */
       padding: 50px;
@@ -101,6 +101,7 @@
             }
         }
   </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
   <div class="container">
@@ -135,22 +136,70 @@
           button.style.display = "inline-block";
           button.onclick = () => window.location.href = "dashboard.html";
         } else {
-          message.innerText = "🎯 50 Tests for ₹799/-";
+          message.innerText = "🎯 Prelims 2024-25 GS-I 50 Tests for ₹799/-";
           button.innerText = "Pay Now";
           button.style.display = "inline-block";
           button.onclick = async () => {
-            try {
-              const confirmRes = await fetch('/auth/confirm-payment', {
+            const handler = function (response) {
+              const username = localStorage.getItem("username");  // Automatically fetch logged-in user's username
+              if (!username) {
+                alert("⚠️ You must log in first.");
+                window.location.href = "login.html";
+                return;
+              }
+
+              const paymentDetails = {
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                username: username,  // Dynamically get the username
+              };
+
+              // Send payment details to the backend for verification
+              fetch("/auth/confirm-payment", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username })
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(paymentDetails),
+              })
+              .then((res) => res.json())
+              .then((data) => {
+                alert(data.message);
+                checkPaymentStatus(); // Refresh the view after confirming payment
+              })
+              .catch((err) => {
+                alert("❌ Payment verification failed.");
               });
-              const result = await confirmRes.json();
-              alert(result.message);
-              checkPaymentStatus(); // refresh the view after confirming payment
-            } catch (e) {
-              alert("❌ Payment failed. Please try again.");
-            }
+            };
+
+              // Add Razorpay payment initiation logic here
+              const res = await fetch("/create-order", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" }
+              });
+              const order = await res.json();
+ 
+              const options = {
+                key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key ID
+                amount: order.amount,
+                currency: "INR",
+                name: "UPSC Rankers Hub",
+                description: "Access to 50 Tests",
+                order_id: order.id,
+                handler: handler,
+                prefill: {
+                  name: "Your Name",
+                  email: "user@example.com",
+                  contact: "9999999999",
+                },
+                theme: {
+                  color: "#5D001E",
+                },
+              };
+ 
+              const rzp = new Razorpay(options);
+              rzp.open();
           };
         }
       } catch (err) {
