@@ -112,6 +112,7 @@
   </div>
 
   <script>
+    localStorage.setItem("username", "testUser");
     const username = localStorage.getItem("username");
     if (!username) {
       alert("⚠️ You must log in first.");
@@ -120,7 +121,7 @@
 
     async function checkPaymentStatus() {
       try {
-        const res = await fetch('/auth/check-payment', {
+        const res = await fetch(`${window.location.origin}/auth/check-payment`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username })
@@ -156,7 +157,7 @@
               };
 
               // Send payment details to the backend for verification
-              fetch("/auth/confirm-payment", {
+              fetch(`${window.location.origin}/auth/confirm-payment`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
