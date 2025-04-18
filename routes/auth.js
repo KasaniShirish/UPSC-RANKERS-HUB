@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
   res.send("✅ Login successful!");
 });
 
-// ✅ Forgot Password Route
+// Forgot password route
 router.post("/forgot-password", async (req, res) => {
   const { username, newPassword } = req.body;
 
@@ -71,13 +71,17 @@ router.post("/forgot-password", async (req, res) => {
   }
 
   try {
+    // Find the user by username
     const user = await User.findOne({ username });
 
     if (!user) {
       return res.status(404).send("❌ User not found.");
     }
 
+    // Hash the new password before saving
     const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+
+    // Save the hashed password in the user's document
     user.password = hashedPassword;
     await user.save();
 
