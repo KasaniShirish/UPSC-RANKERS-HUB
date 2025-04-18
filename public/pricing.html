@@ -62,12 +62,10 @@
 
     async function checkPaymentStatus() {
       try {
-        // const username = localStorage.getItem("username");
-
         const res = await fetch('/auth/check-payment', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username })
+          body: JSON.stringify({ username })
         });
         const data = await res.json();
 
