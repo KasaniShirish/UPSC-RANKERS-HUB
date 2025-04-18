@@ -5,8 +5,8 @@ const Razorpay = require("razorpay");
 
 const router = express.Router();
 const razorpay = new Razorpay({
-  key_id: "YOUR_RAZORPAY_KEY_ID",
-  key_secret: "YOUR_RAZORPAY_KEY_SECRET",
+  key_id: "rzp_test_jMOMbdM8BSDaac",
+  key_secret: "m0Rn80OKBWPvH6hfCBwbnLSc",
 });
 const saltRounds = 10; // Number of rounds for bcryptjs hashing
 
