@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");  // Keep using bcryptjs
 const User = require("../models/User");
 const Razorpay = require("razorpay");
+const crypto = require("crypto");
 
 const router = express.Router();
 const razorpay = new Razorpay({
@@ -100,45 +101,65 @@ router.post("/forgot-password", async (req, res) => {
 
 // Check if user has paid
 router.post('/check-payment', async (req, res) => {
-  const { username } = req.body;
+  const normalizedUsername = req.body.username?.toLowerCase();
 
-  if (!username) {
+  if (!normalizedUsername) {
     return res.status(400).json({ error: 'Username is required' });
   }
 
   try {
-    const user = await User.findOne({ username });
+    console.log("🧾 Checking payment for user:", normalizedUsername);
+    const user = await User.findOne({ username: normalizedUsername });
 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    res.json({ hasPaid: user.hasPaid === true });
+    res.json({ hasPaid: user.hasPaid });
   } catch (err) {
     console.error("❌ Error checking payment status:", err);
     res.status(500).json({ error: 'Server error' });
   }
 });
 
-// Confirm payment and update hasPaid to true
+// Confirm payment and update hasPaid to true with Razorpay signature verification
 router.post('/confirm-payment', async (req, res) => {
-  const { username } = req.body;
+  let {
+    razorpay_order_id,
+    razorpay_payment_id,
+    razorpay_signature,
+    username
+  } = req.body;
+  const normalizedUsername = username?.toLowerCase();
 
-  if (!username) {
-    return res.status(400).json({ error: 'Username is required' });
+  if (!normalizedUsername || !razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+    return res.status(400).json({ error: 'Missing required payment details or username' });
   }
 
   try {
-    const user = await User.findOne({ username });
+    const body = razorpay_order_id + "|" + razorpay_payment_id;
+    const expectedSignature = crypto.createHmac("sha256", razorpay.key_secret)
+      .update(body.toString())
+      .digest("hex");
+
+    if (expectedSignature !== razorpay_signature) {
+      return res.status(400).json({ error: "Invalid payment signature" });
+    }
+
+    const user = await User.findOne({ username: normalizedUsername });
 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    user.hasPaid = true;
-    await user.save();
+    const updatedUser = await User.findOneAndUpdate(
+      { username: normalizedUsername },
+      { $set: { hasPaid: true } },
+      { new: true }
+    );
+    console.log("🧾 Updated user after payment:", updatedUser);
 
-    console.log(`✅ Payment confirmed for user: ${username}`);
+    console.log(`✅ Payment confirmed and verified for user: ${normalizedUsername}`);
     res.json({ message: '✅ Payment confirmed. Access granted!' });
   } catch (err) {
     console.error("❌ Error confirming payment:", err);
@@ -149,6 +170,7 @@ router.post('/confirm-payment', async (req, res) => {
 // Create Razorpay Order
 router.post("/create-order", async (req, res) => {
   const amount = 799;
+  console.log("🧾 Creating Razorpay order with amount:", amount);
 
   const options = {
     amount: amount * 100, // convert to paise
@@ -157,6 +179,7 @@ router.post("/create-order", async (req, res) => {
   };
 
   try {
+    console.log("🧾 Razorpay Order options:", options);  // Log options before sending to Razorpay
     const order = await razorpay.orders.create(options);
     res.json(order);
   } catch (err) {

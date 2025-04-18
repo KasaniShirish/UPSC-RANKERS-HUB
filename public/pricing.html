@@ -103,7 +103,7 @@
   </div>
 
   <script>
-    const username = localStorage.getItem("username");
+    const username = localStorage.getItem("username")?.toLowerCase();
     if (!username) {
       alert("⚠️ You must log in first.");
       window.location.href = "login.html";
@@ -133,7 +133,7 @@
           button.style.display = "inline-block";
           button.onclick = async () => {
             const handler = function (response) {
-              const username = localStorage.getItem("username");
+              const username = localStorage.getItem("username")?.toLowerCase();
               if (!username) {
                 alert("⚠️ You must log in first.");
                 window.location.href = "login.html";
@@ -157,7 +157,9 @@
               .then((res) => res.json())
               .then((data) => {
                 alert(data.message);
-                checkPaymentStatus(); // Refresh the view after confirming payment
+                checkPaymentStatus().then(() => {
+                  console.log("✅ Payment status rechecked and UI updated");
+                });
               })
               .catch((err) => {
                 alert("❌ Payment verification failed.");
