@@ -1,9 +1,9 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");  // Keep using bcryptjs
 const User = require("../models/User");
 
 const router = express.Router();
-const saltRounds = 10; // Number of rounds for bcrypt hashing
+const saltRounds = 10; // Number of rounds for bcryptjs hashing
 
 // ✅ Signup Route (Only username + password)
 router.post("/signup", async (req, res) => {
@@ -23,8 +23,8 @@ router.post("/signup", async (req, res) => {
 
   try {
     // Hash the password before saving
-    const hashedPassword = await bcryptjs.hash(password, saltRounds);
-    
+    const hashedPassword = await bcrypt.hash(password, saltRounds);  // Correct usage of bcryptjs
+
     // Create a new user with the hashed password
     const user = new User({ username, password: hashedPassword });
     await user.save();
@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
   }
 
   // Compare the entered password with the stored hashed password
-  const isMatch = await bcryptjs.compare(password, user.password);
+  const isMatch = await bcrypt.compare(password, user.password);  // Correct usage of bcryptjs
 
   if (!isMatch) {
     return res.status(401).send("❌ Login failed: Invalid password.");
