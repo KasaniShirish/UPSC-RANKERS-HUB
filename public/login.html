@@ -21,36 +21,39 @@
 
     <script>
         async function handleLogin(event) {
-            event.preventDefault();
+    event.preventDefault();
 
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-            if (!username || !password) {
-                alert("❌ Please enter both username and password.");
-                return;
-            }
+    if (!username || !password) {
+        alert("❌ Please enter both username and password.");
+        return;
+    }
 
-            try {
-                const response = await fetch("/auth/login", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ username, password })
-                });
+    try {
+        const response = await fetch("/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        });
 
-                const message = await response.text();
-                alert(message);
+        const message = await response.text();
+        console.log("Server response:", message);  // Log the message for debugging
+        alert(message);
 
-                if (response.ok) {
-                    window.location.href = "dashboard.html";  // Redirect to dashboard
-                } else {
-                    alert("❌ Login failed: Invalid credentials.");
-                }
-            } catch (error) {
-                console.error("Login failed:", error);
-                alert("❌ Something went wrong. Please try again.");
-            }
+        if (response.ok) {
+            console.log("Login successful, redirecting to dashboard..."); // Debug log
+            window.location.href = "dashboard.html";  // Redirect to dashboard
+        } else {
+            console.log("Login failed, response not ok."); // Debug log
+            alert("❌ Login failed");
         }
+    } catch (error) {
+        console.error("Error during login:", error);
+        alert("❌ Something went wrong. Please try again.");
+    }
+}
     </script>
 </body>
 </html>
