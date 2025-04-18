@@ -93,4 +93,52 @@ router.post("/forgot-password", async (req, res) => {
   }
 });
 
+// Check if user has paid
+router.post('/check-payment', async (req, res) => {
+  const { username } = req.body;
+
+  if (!username) {
+    return res.status(400).json({ error: 'Username is required' });
+  }
+
+  try {
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json({ hasPaid: user.hasPaid === true });
+  } catch (err) {
+    console.error("❌ Error checking payment status:", err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// Confirm payment and update hasPaid to true
+router.post('/confirm-payment', async (req, res) => {
+  const { username } = req.body;
+
+  if (!username) {
+    return res.status(400).json({ error: 'Username is required' });
+  }
+
+  try {
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    user.hasPaid = true;
+    await user.save();
+
+    console.log(`✅ Payment confirmed for user: ${username}`);
+    res.json({ message: '✅ Payment confirmed. Access granted!' });
+  } catch (err) {
+    console.error("❌ Error confirming payment:", err);
+    res.status(500).json({ error: 'Server error while confirming payment.' });
+  }
+});
+
 module.exports = router;
