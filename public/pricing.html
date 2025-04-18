@@ -91,15 +91,6 @@
       background-color: #7b1633;
     }
 
-
-    @keyframes waveMove {
-            0% {
-                transform: translateX(0) translateY(0);
-            }
-            100% {
-                transform: translateX(20px) translateY(10px);
-            }
-        }
   </style>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
@@ -125,7 +116,8 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username })
         });
-        const data = await res.json();
+    const data = await res.json();
+    console.log("Payment status data:", data);  // This will log the response from the backend
 
         const message = document.getElementById("message");
         const button = document.getElementById("actionBtn");
