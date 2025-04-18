@@ -60,4 +60,33 @@ router.post("/login", async (req, res) => {
   res.send("✅ Login successful!");
 });
 
+// ✅ Forgot Password Route
+router.post("/forgot-password", async (req, res) => {
+  const { username, newPassword } = req.body;
+
+  console.log("Forgot Password request received:", req.body);
+
+  if (!username || !newPassword) {
+    return res.status(400).send("❌ Missing username or new password.");
+  }
+
+  try {
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(404).send("❌ User not found.");
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
+    user.password = hashedPassword;
+    await user.save();
+
+    console.log(`✅ Password updated for user: ${username}`);
+    res.send("✅ Password reset successful!");
+  } catch (err) {
+    console.error("❌ Error during password reset:", err);
+    res.status(500).send("❌ Server error: Could not reset password.");
+  }
+});
+
 module.exports = router;
