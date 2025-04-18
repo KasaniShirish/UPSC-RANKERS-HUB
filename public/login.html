@@ -20,17 +20,35 @@
     <p>Forgot password? <a href="forgotpassword.html">Reset here</a></p>
 
     <script>
-        function handleLogin(event) {
+        async function handleLogin(event) {
             event.preventDefault();
 
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
 
-            if (username && password) {
-                localStorage.setItem("loggedIn", "true"); // Store login status
-                window.location.href = "dashboard.html";  // ✅ Redirect to dashboard
-            } else {
-                alert("Invalid credentials!");
+            if (!username || !password) {
+                alert("❌ Please enter both username and password.");
+                return;
+            }
+
+            try {
+                const response = await fetch("/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const message = await response.text();
+                alert(message);
+
+                if (response.ok) {
+                    window.location.href = "dashboard.html";  // Redirect to dashboard
+                } else {
+                    alert("❌ Login failed: Invalid credentials.");
+                }
+            } catch (error) {
+                console.error("Login failed:", error);
+                alert("❌ Something went wrong. Please try again.");
             }
         }
     </script>
