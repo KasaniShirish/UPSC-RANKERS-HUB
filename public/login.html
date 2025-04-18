@@ -20,8 +20,8 @@
     <p>Forgot password? <a href="forgotpassword.html">Reset here</a></p>
 
     <script>
-        async function handleLogin(event) {
-    event.preventDefault();
+       async function handleLogin(event) {
+    event.preventDefault();  // Prevent the form from reloading the page
 
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -44,7 +44,13 @@
 
         if (response.ok) {
             console.log("Login successful, redirecting to dashboard..."); // Debug log
-            window.location.href = "dashboard.html";  // Redirect to dashboard
+            
+            // Check if window.location.href is being set correctly
+            console.log("Redirect URL:", "dashboard.html");
+
+            setTimeout(() => {
+                window.location.href = "dashboard.html";  // Redirect to dashboard
+            }, 500);  // 500ms delay before redirecting
         } else {
             console.log("Login failed, response not ok."); // Debug log
             alert("❌ Login failed");
