@@ -21,7 +21,7 @@
 
     <script>
        async function handleLogin(event) {
-    event.preventDefault();  // Prevent the form from reloading the page
+    event.preventDefault();  // Ensure this prevents form submission reload
 
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -49,6 +49,7 @@
             console.log("Redirect URL:", "dashboard.html");
 
             setTimeout(() => {
+                console.log("Redirecting to dashboard...");  // Debug log for redirection
                 window.location.href = "dashboard.html";  // Redirect to dashboard
             }, 500);  // 500ms delay before redirecting
         } else {
