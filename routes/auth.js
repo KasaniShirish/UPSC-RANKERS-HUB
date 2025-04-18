@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bcrypt = require("bcryptjs");  // Keep using bcryptjs
 const User = require("../models/User");
@@ -6,8 +7,8 @@ const crypto = require("crypto");
 
 const router = express.Router();
 const razorpay = new Razorpay({
-  key_id: "rzp_test_jMOMbdM8BSDaac",
-  key_secret: "m0Rn80OKBWPvH6hfCBwbnLSc",
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 const saltRounds = 10; // Number of rounds for bcryptjs hashing
 
