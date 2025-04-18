@@ -1,7 +1,7 @@
 // Import necessary modules
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose'); // Added for MongoDB connection
+const mongoose = require('mongoose'); // Import mongoose for MongoDB connection
 require('dotenv').config();  // To use the .env file
 const authRoutes = require('./routes/auth');  // Import auth routes
 
@@ -22,10 +22,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB connection using MONGO_URI from .env
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   console.log('✅ Connected to MongoDB');
 })
