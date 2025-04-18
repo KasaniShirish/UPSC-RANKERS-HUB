@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
-<body>
-    <h1>Login</h1>
+<body style="background-color: #EDC7B7;">
+    <h1 style="color: #000000;">Login</h1>
     <form onsubmit="handleLogin(event)">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" id="username" name="username" required style="color: #000000;"><br><br>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="password" name="password" required style="color: #000000;"><br><br>
 
-        <button type="submit">Login</button>
+        <button type="submit" style="color: #000000;">Login</button>
     </form>
 
-    <p>Forgot password? <a href="forgotpassword.html">Reset here</a></p>
+    <p style="color: #000000;">Forgot password? <a href="forgotpassword.html" style="color: #e30707;">Reset here</a></p>
 
     <script>
        async function handleLogin(event) {
