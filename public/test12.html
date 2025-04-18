@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC Rankers hub Mock Test 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #82f3fb;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question-container {
+            display: none;
+        }
+        .question-container.active {
+            display: block;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        #navigation-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #timer {
+            text-align: center;
+            margin-top: 10px;
+            color: red;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UPSC Rankers Hub Mock Test 1</h1>
+        <p id="timer">Time Left: 120:00</p>
+        <form id="testForm" onsubmit="handleSubmit(event)">
+            <div class="question-container active" id="question-container-1">
+                <!-- Questions 1 to 10 -->
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-2">
+                <!-- Questions 11 to 20 -->
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-3">
+                <!-- Questions 21 to 30 -->
+
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-4">
+                <!-- Questions 31 to 40 -->
+
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-5">
+                <!-- Questions 41 to 50 -->
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-6">
+                <!-- Questions 51 to 60 -->
+
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-7">
+                <!-- Questions 61 to 70 -->
+
+
+
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-8">
+                <!-- Questions 71 to 80 -->
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-9">
+                <!-- Questions 81 to 90 -->
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="question-container" id="question-container-10">
+                <!-- Questions 91 to 100 -->
+
+
+
+
+
+
+            </div>
+            <div id="navigation-buttons">
+                <button type="button" id="prevPage" onclick="changePage(-1)">Previous</button>
+                <button type="button" id="nextPage" onclick="changePage(1)">Next</button>
+                <button type="submit" id="submitBtn" style="display:none;">Submit</button>
+            </div>
+        </form>
+
+        <div id="score" style="display:none;"></div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 10; // Ten pages
+        let timer;
+        let timeLeft = 120 * 60; // 120 minutes in seconds
+        let intervalID;
+
+        const correctAnswers = 
+{
+
+
+
+
+
+
+
+
+
+
+    
+}
+
+function startTimer() {
+    intervalID = setInterval(function () {
+        if (timeLeft <= 0) {
+            clearInterval(intervalID);
+            alert("Time's up!");
+            document.getElementById('testForm').submit();
+        } else {
+            timeLeft--;
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        }
+    }, 1000);
+}
+
+function changePage(direction) {
+document.getElementById(`question-container-${currentPage}`).classList.remove('active');
+currentPage += direction;
+document.getElementById(`question-container-${currentPage}`).classList.add('active');
+
+document.getElementById('prevPage').disabled = currentPage === 1;
+document.getElementById('nextPage').disabled = currentPage === totalPages;
+
+// Show submit button on the last page, hide it on others
+if (currentPage === totalPages) {
+document.getElementById('submitBtn').style.display = 'inline-block';
+} else {
+document.getElementById('submitBtn').style.display = 'none';
+}
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    clearInterval(intervalID); // Stop the timer on submit
+    let score = 0;
+    for (let i = 1; i <= 100; i++) {
+        const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    document.getElementById('testForm').style.display = 'none';
+    document.getElementById('score').style.display = 'block';
+    document.getElementById('score').innerHTML = `Your score: ${score}/100`;
+}
+
+startTimer();
+</script>
+</body>
+</html>

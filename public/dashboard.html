@@ -7,25 +7,75 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #E3E2DF;
             text-align: center;
+            padding-top: 0;  /* Remove padding from top */
             padding: 50px;
         }
+        .heading-box {
+            position: relative;
+            background: linear-gradient(135deg, #5D001E, #E3AFBC, #9A1750);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            margin-top: 0;  /* Ensure it starts from the top of the page */
+            margin-bottom: 20px;
+            overflow: hidden;
+            width: 100vw;
+            margin-left: -50px;
+            margin-right: -50px;
+        }
+
+        .heading-mask {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+        }
+
+        .heading-box::before,
+        .heading-box::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 50 Q 25 0 50 50 T 100 50' stroke='%239f47b4' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 100px 100px;
+            opacity: 0.2; /* for ::before */
+            z-index: 0;
+            animation: waveMove 10s linear infinite alternate;
+            transform: translateY(-50%);
+        }
+
+        .heading-box::after {
+            animation-delay: 5s;
+            opacity: 0.3; /* for ::after */
+        }
+
+        .heading-box h1 {
+            position: relative;
+            z-index: 1;
+        }
+
         h1 {
-            color: #333;
+            color: #000;
         }
         p {
             font-size: 18px;
             margin-bottom: 20px;
         }
         .test-buttons {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
             gap: 15px;
-            align-items: center;
+            justify-items: center;
+            max-width: 95%;
+            margin: 0 auto;
         }
         button {
-            background-color: #007bff;
+            background-color: #5D001E;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -33,6 +83,7 @@
             cursor: pointer;
             border-radius: 5px;
             transition: 0.3s;
+            background-image: none;
         }
         button:hover {
             background-color: #0056b3;
@@ -41,19 +92,77 @@
             margin-top: 30px; /* Add margin to separate the logout button */
             background-color: #dc3545; /* Red color for logout button */
         }
+
+        @keyframes waveMove {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                transform: translateX(20px) translateY(10px);
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>UPSC RANKERS HUB GS-I TEST SERIES 2025</h1>
+    <div class="heading-box">
+        <div class="heading-mask">
+            <h1>UPSC RANKERS HUB GS-I TEST SERIES 2025</h1>
+        </div>
+    </div>
     <p>Select a test to start:</p>
 <br>
     <div class="test-buttons">
         <button onclick="window.location.href='test1.html'">Test Series 1</button>
-        <br>
+        <button onclick="window.location.href='test2.html'">Test Series 2</button>
+        <button onclick="window.location.href='test3.html'">Test Series 3</button>
+        <button onclick="window.location.href='test4.html'">Test Series 4</button>
+        <button onclick="window.location.href='test5.html'">Test Series 5</button>
+        <button onclick="window.location.href='test6.html'">Test Series 6</button>
+        <button onclick="window.location.href='test7.html'">Test Series 7</button>
+        <button onclick="window.location.href='test8.html'">Test Series 8</button>
+        <button onclick="window.location.href='test9.html'">Test Series 9</button>
+        <button onclick="window.location.href='test10.html'">Test Series 10</button>
         <button onclick="window.location.href='test11.html'">Test Series 11</button>
-        <br>
+        <button onclick="window.location.href='test12.html'">Test Series 12</button>
+        <button onclick="window.location.href='test13.html'">Test Series 13</button>
+        <button onclick="window.location.href='test14.html'">Test Series 14</button>
+        <button onclick="window.location.href='test15.html'">Test Series 15</button>
+        <button onclick="window.location.href='test16.html'">Test Series 16</button>
+        <button onclick="window.location.href='test17.html'">Test Series 17</button>
+        <button onclick="window.location.href='test18.html'">Test Series 18</button>
+        <button onclick="window.location.href='test19.html'">Test Series 19</button>
+        <button onclick="window.location.href='test20.html'">Test Series 20</button>
         <button onclick="window.location.href='test21.html'">Test Series 21</button>
+        <button onclick="window.location.href='test22.html'">Test Series 22</button>
+        <button onclick="window.location.href='test23.html'">Test Series 23</button>
+        <button onclick="window.location.href='test24.html'">Test Series 24</button>
+        <button onclick="window.location.href='test25.html'">Test Series 25</button>
+        <button onclick="window.location.href='test26.html'">Test Series 26</button>
+        <button onclick="window.location.href='test27.html'">Test Series 27</button>
+        <button onclick="window.location.href='test28.html'">Test Series 28</button>
+        <button onclick="window.location.href='test29.html'">Test Series 29</button>
+        <button onclick="window.location.href='test30.html'">Test Series 30</button>
+        <button onclick="window.location.href='test31.html'">Test Series 31</button>
+        <button onclick="window.location.href='test32.html'">Test Series 32</button>
+        <button onclick="window.location.href='test33.html'">Test Series 33</button>
+        <button onclick="window.location.href='test34.html'">Test Series 34</button>
+        <button onclick="window.location.href='test35.html'">Test Series 35</button>
+        <button onclick="window.location.href='test36.html'">Test Series 36</button>
+        <button onclick="window.location.href='test37.html'">Test Series 37</button>
+        <button onclick="window.location.href='test38.html'">Test Series 38</button>
+        <button onclick="window.location.href='test39.html'">Test Series 39</button>
+        <button onclick="window.location.href='test40.html'">Test Series 40</button>
+        <button onclick="window.location.href='test41.html'">Test Series 41</button>
+        <button onclick="window.location.href='test42.html'">Test Series 42</button>
+        <button onclick="window.location.href='test43.html'">Test Series 43</button>
+        <button onclick="window.location.href='test44.html'">Test Series 44</button>
+        <button onclick="window.location.href='test45.html'">Test Series 45</button>
+        <button onclick="window.location.href='test46.html'">Test Series 46</button>
+        <button onclick="window.location.href='test47.html'">Test Series 47</button>
+        <button onclick="window.location.href='test48.html'">Test Series 48</button>
+        <button onclick="window.location.href='test49.html'">Test Series 49</button>
+        <button onclick="window.location.href='test50.html'">Test Series 50</button>
     </div>
 
     <button class="logout-btn" onclick="logout()">Logout</button>
