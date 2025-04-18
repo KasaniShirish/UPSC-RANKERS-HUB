@@ -107,12 +107,10 @@ router.post('/check-payment', async (req, res) => {
   }
 
   try {
-    let user = await User.findOne({ username });
+    const user = await User.findOne({ username });
 
     if (!user) {
-      // Automatically create a test user if not found
-      user = new User({ username, password: "dummy", hasPaid: false });
-      await user.save();
+      return res.status(404).json({ error: 'User not found' });
     }
 
     res.json({ hasPaid: user.hasPaid === true });
