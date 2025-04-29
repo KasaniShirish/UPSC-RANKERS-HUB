@@ -1032,38 +1032,39 @@
 };
 
     
-
 function startTimer() {
-    intervalID = setInterval(function () {
-        if (timeLeft <= 0) {
-            clearInterval(intervalID);
-            alert("Time's up!");
-            document.getElementById('testForm').submit();
-        } else {
-            timeLeft--;
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            document.getElementById('timer').textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            intervalID = setInterval(function () {
+                if (timeLeft <= 0) {
+                    clearInterval(intervalID);
+                    alert("Time's up!");
+                    document.getElementById('testForm').submit();
+                } else {
+                    timeLeft--;
+                    let minutes = Math.floor(timeLeft / 60);
+                    let seconds = timeLeft % 60;
+                    document.getElementById('timer').textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                }
+            }, 1000);
         }
-    }, 1000);
-}
 
-function changePage(direction) {
-document.getElementById(`question-container-${currentPage}`).classList.remove('active');
-currentPage += direction;
-document.getElementById(`question-container-${currentPage}`).classList.add('active');
+        function changePage(direction) {
+    document.getElementById(`question-container-${currentPage}`).classList.remove('active');
+    currentPage += direction;
+    document.getElementById(`question-container-${currentPage}`).classList.add('active');
 
-document.getElementById('prevPage').disabled = currentPage === 1;
-document.getElementById('nextPage').disabled = currentPage === totalPages;
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = currentPage === totalPages;
 
-// Show submit button on the last page, hide it on others
-if (currentPage === totalPages) {
-document.getElementById('submitBtn').style.display = 'inline-block';
-} else {
-document.getElementById('submitBtn').style.display = 'none';
-}
-}
-function handleSubmit(event) {
+    // Show submit button on the last page, hide it on others
+    if (currentPage === totalPages) {
+        document.getElementById('submitBtn').style.display = 'inline-block';
+    } else {
+        document.getElementById('submitBtn').style.display = 'none';
+    }
+        }
+ 
+
+        function handleSubmit(event) {
     event.preventDefault();
     clearInterval(intervalID);
     let score = 0;
@@ -1091,9 +1092,25 @@ function handleSubmit(event) {
         Attempted: ${attempted}/100
     `;
 }
+document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 1; i <= 100; i++) {
+        const radios = document.querySelectorAll(`input[name="q${i}"]`);
+        radios.forEach(radio => {
+            radio.addEventListener('click', function (e) {
+                // if this radio was already checked, uncheck it
+                if (this.previousChecked) {
+                    this.checked = false;
+                }
+                // mark all radios in this group as not previously checked
+                radios.forEach(r => r.previousChecked = false);
+                // mark the clicked radio as previously checked (for next click)
+                this.previousChecked = this.checked;
+            });
+        });
+    }
+});
 
         startTimer();
     </script>
-</script>
 </body>
 </html>

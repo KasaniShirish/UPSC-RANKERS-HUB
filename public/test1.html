@@ -1064,23 +1064,24 @@
         Attempted: ${attempted}/100
     `;
 }
-for (let i = 1; i <= 100; i++) {
-    const radios = document.getElementsByName(`q${i}`);
-    radios.forEach(radio => {
-        let isClicked = false;
-
-        radio.addEventListener("mousedown", function () {
-            isClicked = this.checked;
+document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 1; i <= 100; i++) {
+        const radios = document.querySelectorAll(`input[name="q${i}"]`);
+        radios.forEach(radio => {
+            radio.addEventListener('click', function (e) {
+                // if this radio was already checked, uncheck it
+                if (this.previousChecked) {
+                    this.checked = false;
+                }
+                // mark all radios in this group as not previously checked
+                radios.forEach(r => r.previousChecked = false);
+                // mark the clicked radio as previously checked (for next click)
+                this.previousChecked = this.checked;
+            });
         });
+    }
+});
 
-        radio.addEventListener("click", function (e) {
-            if (isClicked) {
-                this.checked = false;
-                e.preventDefault();
-            }
-        });
-    });
-}
         startTimer();
     </script>
 </body>
