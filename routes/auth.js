@@ -223,4 +223,13 @@ router.get("/all-users", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch users" });
   }
 });
+// After your user.save()
+await user.save();
+console.log("✅ User saved:", user);
+
+// Add this in your catch block:
+} catch (err) {
+  console.error("❌ Error during signup:", err);
+  res.status(500).send("Server error.");
+}
 module.exports = router;
