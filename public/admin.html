@@ -1,0 +1,45 @@
+<!-- public/admin.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Grant Access</title>
+</head>
+<body>
+  <h1>Grant Access to Student</h1>
+
+  <form id="grantForm">
+    <label>Student Username:</label><br>
+    <input type="text" id="username" required><br><br>
+
+    <label>Admin Password:</label><br>
+    <input type="password" id="secret" required><br><br>
+
+    <button type="submit">Grant Access</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    const form = document.getElementById('grantForm');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const secret = document.getElementById('secret').value;
+
+      const response = await fetch('/auth/grant-access', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${secret}`
+        },
+        body: JSON.stringify({ username })
+      });
+
+      const data = await response.json();
+      document.getElementById('result').textContent = data.message || data.error;
+    });
+  </script>
+</body>
+</html>

@@ -188,5 +188,30 @@ router.post("/create-order", async (req, res) => {
     res.status(500).json({ error: "Server error: Unable to create order" });
   }
 });
+// Admin-only route to manually grant access
+router.post("/grant-access", async (req, res) => {
+  const { username } = req.body;
+  const normalizedUsername = username?.toLowerCase();
 
+  // Simple password protection (you can change this key)
+  const authHeader = req.headers.authorization;
+  if (authHeader !== "Bearer Shirishkasani828@") {
+    return res.status(403).json({ error: "Unauthorized" });
+  }
+
+  try {
+    const user = await User.findOne({ username: normalizedUsername });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    user.hasPaid = true;
+    await user.save();
+
+    res.json({ message: `✅ Access granted to ${normalizedUsername}` });
+  } catch (err) {
+    res.status(500).json({ error: "Server error while granting access." });
+  }
+});
 module.exports = router;
