@@ -35,7 +35,7 @@ router.post("/signup", async (req, res) => {
     // Create a new user with the hashed password
     const user = new User({ username: normalizedUsername, password: hashedPassword });
     await user.save();
-
+    console.log("🔎 Just saved user:", user);
     console.log(`✅ New user signed up: ${normalizedUsername}`);
     res.send("✅ Signup successful! Please log in.");
   } catch (err) {
@@ -215,5 +215,13 @@ router.post("/grant-access", async (req, res) => {
     res.status(500).json({ error: "Server error while granting access." });
   }
 });
-
+// TEMP: Show all users (for debugging)
+router.get("/all-users", async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: "❌ Failed to fetch users." });
+  }
+});
 module.exports = router;
