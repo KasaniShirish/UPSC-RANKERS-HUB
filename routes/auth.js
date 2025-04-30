@@ -214,4 +214,13 @@ router.post("/grant-access", async (req, res) => {
     res.status(500).json({ error: "Server error while granting access." });
   }
 });
+// TEMPORARY: See all users in the database
+router.get("/all-users", async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch users" });
+  }
+});
 module.exports = router;
