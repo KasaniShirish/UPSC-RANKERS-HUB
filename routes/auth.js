@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bcrypt = require("bcryptjs");  // Keep using bcryptjs
 const User = require("../models/User");
@@ -15,14 +14,15 @@ const saltRounds = 10; // Number of rounds for bcryptjs hashing
 // ✅ Signup Route (Only username + password)
 router.post("/signup", async (req, res) => {
   const { username, password } = req.body;
+  const normalizedUsername = username?.trim().toLowerCase();
 
   console.log("Signup request received:", req.body);
 
-  if (!username || !password) {
+  if (!normalizedUsername || !password) {
     return res.status(400).send("❌ Missing username or password.");
   }
 
-  const existingUser = await User.findOne({ username });
+  const existingUser = await User.findOne({ username: normalizedUsername });
 
   if (existingUser) {
     return res.status(400).send("❌ Username already exists.");
@@ -33,10 +33,10 @@ router.post("/signup", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, saltRounds);  // Correct usage of bcryptjs
 
     // Create a new user with the hashed password
-    const user = new User({ username, password: hashedPassword });
+    const user = new User({ username: normalizedUsername, password: hashedPassword });
     await user.save();
 
-    console.log(`✅ New user signed up: ${username}`);
+    console.log(`✅ New user signed up: ${normalizedUsername}`);
     res.send("✅ Signup successful! Please log in.");
   } catch (err) {
     console.error("❌ Failed to save user data:", err);
@@ -214,22 +214,5 @@ router.post("/grant-access", async (req, res) => {
     res.status(500).json({ error: "Server error while granting access." });
   }
 });
-// TEMPORARY: See all users in the database
-router.get("/all-users", async (req, res) => {
-  try {
-    const users = await User.find({});
-    res.json(users);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch users" });
-  }
-});
-// After your user.save()
-await user.save();
-console.log("✅ User saved:", user);
 
-// Add this in your catch block:
-} catch (err) {
-  console.error("❌ Error during signup:", err);
-  res.status(500).send("Server error.");
-}
 module.exports = router;
