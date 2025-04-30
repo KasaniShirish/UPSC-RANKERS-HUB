@@ -47,10 +47,11 @@ router.post("/signup", async (req, res) => {
 // ✅ Login Route (Only username + password)
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  const normalizedUsername = username?.trim().toLowerCase();
 
-  console.log("Login request received:", req.body);
+  console.log("Login request received:", normalizedUsername);
 
-  const user = await User.findOne({ username });
+  const user = await User.findOne({ username: normalizedUsername });
 
   if (!user) {
     return res.status(401).send("❌ Login failed: Invalid username.");
@@ -63,7 +64,7 @@ router.post("/login", async (req, res) => {
     return res.status(401).send("❌ Login failed: Invalid password.");
   }
 
-  console.log(`✅ User logged in: ${username}`);
+  console.log(`✅ User logged in: ${normalizedUsername}`);
   res.send("✅ Login successful!");
 });
 
@@ -191,7 +192,7 @@ router.post("/create-order", async (req, res) => {
 // Admin-only route to manually grant access
 router.post("/grant-access", async (req, res) => {
   const { username } = req.body;
-  const normalizedUsername = username?.toLowerCase();
+  const normalizedUsername = username?.trim().toLowerCase();
 
   // Simple password protection (you can change this key)
   const authHeader = req.headers.authorization;
